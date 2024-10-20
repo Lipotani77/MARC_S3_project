@@ -22,5 +22,6 @@ int main() {
         printf("\n");
     }
     displayMap(map);
+    printf("Map displayed\n");
     return 0;
 }
