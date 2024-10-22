@@ -23,5 +23,6 @@ int main() {
     }
     displayMap(map);
     printf("Map displayed\n");
+    printf("Hello world");
     return 0;
 }
