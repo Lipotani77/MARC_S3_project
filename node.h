@@ -1,9 +1,9 @@
 #ifndef  NODE_H
 #define NODE_H
 #define ACTION_SIZE 9
-#include <
+#include <time.h>
 
-typedef  struct s_node
+typedef struct s_node
 {
     int value;
     int map_pos[2]; // x, y
