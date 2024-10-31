@@ -2,7 +2,7 @@
 // Created by flasque on 19/10/2024.
 //
 
-#include "moves.h"
+#include "../include/moves.h"
 
 /* prototypes of local functions */
 /* local functions are used only in this file, as helper functions */

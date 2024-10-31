@@ -4,7 +4,7 @@
 
 #include <assert.h>
 #include <stdlib.h>
-#include "queue.h"
+#include "../include/queue.h"
 
 /**
  * @brief Function to create a queue

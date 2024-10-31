@@ -2,7 +2,7 @@
 // Created by flasque on 19/10/2024.
 //
 
-#include "loc.h"
+#include "../include/loc.h"
 
 t_localisation loc_init(int x, int y, t_orientation ori)
 {

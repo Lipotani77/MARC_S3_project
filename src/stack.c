@@ -4,7 +4,7 @@
 
 #include <malloc.h>
 #include <assert.h>
-#include "stack.h"
+#include "../include/stack.h"
 
 /**
  * @brief Function to create a stack
