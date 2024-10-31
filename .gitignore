@@ -57,3 +57,5 @@ CMakeLists.txt
 *.cmake
 *.yaml
 
+# Sticky notes
+reminder.txt
