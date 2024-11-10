@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "../include/map.h"
 #include "../include/loc.h"
+#include "../include/node.h"
 
 int main() {
     t_map map = createMapFromFile("..\\maps\\example1.map");
@@ -24,5 +25,7 @@ int main() {
     }
     displayMap(map);
     printf("Map displayed\n");
+
+
     return 0;
 }

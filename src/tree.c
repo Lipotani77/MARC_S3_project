@@ -14,3 +14,4 @@ tree create_tree()
  * Je me suis donc dit qu'il fallait faire une fonction qui en fonction des mouvements disponibles, nous donne la case avec le minimum cost possible et cela nous donnerais également
  * les coordonnées de cette case. Ainsi, quand on arrive au dernier mouvement, on aura la nouvelle position de MARC.
  * Mais dans cette fonction, faut prendre en compte quand MARC arrive à la fin de la map, s'il est arrivé à la base ou s'il meurt.*/
+
