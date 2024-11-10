@@ -32,10 +32,12 @@ typedef struct s_node
 
 /**
  * @brief Function to create a node
- * @param value : the value of the node
+ * @param cost : the cost of the node
  * @param x : the x position of the node
  * @param y : the y position of the node
- * @return the node
+ * @param orientation : the orientation of the rover
+ * @param move : the move that have been achieved to arrive to this node
+ * @return a pointer to the node
  */
 p_node create_node(int, int, int, t_orientation, char *);
 
