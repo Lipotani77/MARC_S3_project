@@ -5,6 +5,8 @@
 #ifndef UNTITLED1_LOC_H
 #define UNTITLED1_LOC_H
 
+#include "map.h"
+
 /**
  * @brief Enum for the orientation of the robot (NORTH, EAST, SOUTH, WEST)
  */
@@ -79,5 +81,17 @@ t_position UP(t_position);
  * @return the DOWN position
  */
 t_position DOWN(t_position);
+
+//---------------------------------//
+
+/**
+ * @brief Function to update the localisation of the robot according to a move
+ * @param loc : the localisation of the robot
+ * @param move : the move to do
+ * @return the new localisation of the robot
+ */
+int is_out_of_map(t_position, t_map);
+
+int is_at_base_station(t_position, t_map);
 
 #endif //UNTITLED1_LOC_H

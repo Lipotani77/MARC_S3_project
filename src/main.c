@@ -3,6 +3,7 @@
 #include "../include/node.h"
 
 
+#include "../include/loc.h"
 
 int main() {
     t_map map = createMapFromFile("..\\maps\\example1.map");
