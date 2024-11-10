@@ -26,5 +26,8 @@ int main() {
     }
     displayMap(map);
     printf("Map displayed\n");
+
+    /* let's now find the base station position */
+    printf("Base station position : x = %d and y = %d\n", findBaseCoordinate(map).x, findBaseCoordinate(map).y);
     return 0;
 }
