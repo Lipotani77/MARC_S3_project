@@ -50,3 +50,13 @@ t_position DOWN(t_position pos)
     return new_pos;
 }
 
+int is_out_of_map(t_position rover_pos, t_map map){
+    if(rover_pos.x <0 || rover_pos.x > map.x_max || rover_pos.y < 0 || rover_pos.y > map.y_max){ //the rover is out of the map if its x or y position is less than 0 or greater than the maximum x or y position
+        return 1;
+    }
+    else{
+        return 0;
+    }
+}
+
+
