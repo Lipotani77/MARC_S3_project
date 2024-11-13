@@ -19,5 +19,5 @@ add_executable(untitled1 src/main.c
         src/tree.c
         include/tree.h
         include/path.h
-        include/path.c
+        src/path.c
 )
