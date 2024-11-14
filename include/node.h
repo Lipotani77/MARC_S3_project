@@ -47,5 +47,12 @@ void add_node(); //to be defined
 
 p_node createNode(int val, int nb_sons);
 
-int cost_node(int x, int y);
+/**
+ * @brief Function to find the cost at given coordinates
+ * @param x : the i index of the cost which is also the x position
+ * @param y : the j index of the cost which is also the y position
+ * @param map : the map with the cost we need
+ * @return cost : the cost of the position we are
+ */
+int cost_node(int x, int y, t_map map);
 #endif //NODE_H
