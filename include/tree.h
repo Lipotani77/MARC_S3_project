@@ -10,6 +10,7 @@
 #define MAXI_MOVES 9  // 9 movements available per phase
 
 #include "node.h"
+#include "map.h"
 
 /**
  * @brief structure for the N-ary tree
@@ -32,7 +33,10 @@ typedef  struct N_ary_tree
  * @param move : here at the creation of the tree we will set the value to "start"
  * @return the node
  */
-tree create_tree(int, int, int, t_orientation, char *);
+
+tree create_tree(t_localisation, t_map, hand);
+
+recursive_creation(t_node *, hand, );
 
 
 #endif //TREE_H
