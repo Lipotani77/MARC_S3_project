@@ -1,4 +1,5 @@
 #include "../include/node.h"
+#include "../include/loc.h"
 
 p_node create_node(int cost, int x, int y, t_orientation orientation, char *move)
 {
@@ -27,5 +28,4 @@ int cost_node(int x, int y, t_map map){
     int cost_node;
     cost_node = map.costs[y][x];
     return cost_node;
-
 }
