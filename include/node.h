@@ -45,7 +45,6 @@ p_node create_node(int, int, int, t_orientation, char *);
 void add_node(); //to be defined
 
 
-p_node createNode(int val, int nb_sons);
 
 /**
  * @brief Function to find the cost at given coordinates

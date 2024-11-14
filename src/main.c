@@ -32,5 +32,8 @@ int main() {
 
     /* let's now find the base station position */
     printf("Base station position : x = %d and y = %d\n", findBaseCoordinate(map).x, findBaseCoordinate(map).y);
+    int cost;
+    cost = cost_node(findBaseCoordinate(map).x, findBaseCoordinate(map).y, map);
+    printf("The cost is %d", cost);
     return 0;
 }
