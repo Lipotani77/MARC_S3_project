@@ -27,5 +27,6 @@ p_node create_node(int cost, int x, int y, t_orientation orientation, char *move
 int cost_node(int x, int y){
     //Idea : In the node I have the cost and the position. SO what I can do is to compare the cost of the nodes.
     // for that I need a tree I THINK
+    // Maybe I cand do it with recursivity ?
 
 }
