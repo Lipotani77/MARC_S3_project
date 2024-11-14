@@ -6,7 +6,7 @@ t_node *create_node(t_localisation loc, int value, int depth, int nb_sons)
     new_node->loc = loc;
     new_node->value = value;
     new_node->depth = depth;
-    new_node->nb_sons = nb_sons;
+    new_node->nbSons = nb_sons;
 
     if (nb_sons > 0)
     {
