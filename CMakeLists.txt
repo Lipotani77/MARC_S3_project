@@ -20,4 +20,6 @@ add_executable(untitled1 src/main.c
         include/tree.h
         include/path.h
         src/path.c
+        include/draw.h
+        src/draw.c
 )
