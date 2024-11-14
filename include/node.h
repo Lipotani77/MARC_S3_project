@@ -46,4 +46,6 @@ void add_node(); //to be defined
 
 
 p_node createNode(int val, int nb_sons);
+
+int cost_node(int x, int y);
 #endif //NODE_H

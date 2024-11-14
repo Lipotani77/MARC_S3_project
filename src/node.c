@@ -20,3 +20,12 @@ p_node create_node(int cost, int x, int y, t_orientation orientation, char *move
     }
     return new_node;
 }
+
+
+//first versiont of cost_node
+// Function to find the cost of a given coordinate
+int cost_node(int x, int y){
+    //Idea : In the node I have the cost and the position. SO what I can do is to compare the cost of the nodes.
+    // for that I need a tree I THINK
+
+}
