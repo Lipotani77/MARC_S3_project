@@ -4,6 +4,8 @@
 
 
 #include "../include/loc.h"
+#include "../include/node.h"
+#include "../include/tree.h"
 
 int main() {
     t_map map = createMapFromFile("..\\maps\\example1.map");
@@ -27,5 +29,8 @@ int main() {
     }
     displayMap(map);
     printf("Map displayed\n");
+
+    /* let's now find the base station position */
+    printf("Base station position : x = %d and y = %d\n", findBaseCoordinate(map).x, findBaseCoordinate(map).y);
     return 0;
 }

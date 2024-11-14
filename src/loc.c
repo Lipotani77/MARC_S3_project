@@ -59,4 +59,30 @@ int is_out_of_map(t_position rover_pos, t_map map){
     }
 }
 
+t_position findBaseCoordinate(t_map map){
+    t_position base_pos;
+    base_pos.x = -1;
+    base_pos.y = -1;
+    for(int i = 0; i < map.y_max; i++){ //loop through the map to find the base station, remember that the map is a 2D array
+        for(int j = 0; j < map.x_max; j++){
+            if(map.soils[i][j] == BASE_STATION){ //if the soil is a base station, then we found the base station
+                base_pos.x = j;
+                base_pos.y = i;
+                return base_pos;
+            }
+        }
+    }
+    if(base_pos.x == -1 && base_pos.y == -1){ // in case that we might not have put the base station in the map or if the base station is not found
+        printf("The base is not found in the map\n");
+    }
+    return base_pos;
+}
 
+int is_at_base_station(t_position base_pos, t_position MARC_pos){
+    if(base_pos.x == MARC_pos.x && base_pos.y == MARC_pos.y){ //if the x and y position of the base station is equal to the x and y position of MARC, then MARC is at the base station
+        return 1;
+    }
+    else{
+        return 0;
+    }
+}
