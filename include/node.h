@@ -7,6 +7,10 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "loc.h"
+#include "moves.h"
+
+#define MAXI_DEPTH 5  // 5 movements possible per phase
+#define MAXI_MOVES 9  // 9 movements available per phase
 
 #define MAXI_DEPTH 5  // 5 movements possible per phase
 #define MAXI_MOVES 9  // 9 movements available per phase
@@ -23,16 +27,18 @@
 
 typedef struct s_node
 {
-    t_localisation loc;
-    int value;
-    int depth;
-    struct s_node **sons;
-    int nb_sons; // Physical size of the array
-} t_node;
 
+    int value; // the cost of the node
+    t_localisation loc; // the position of the node
+    t_move move; // the move that have been achieved to arrive to this node
+    struct s_node *sons[MAXI_MOVES]; // the sons of the node
+    int depth; // the depth of the node, to be initialized to 0, and should not exceed 5 or 4 as a phase has 5 or 4 moves
+    int nb_children; // the number of children of the node, we will decrement it each time we are going more in depth it should be initialized to 9
+} t_node, *p_node;
 
 t_node *create_node(t_localisation, int, int, int);
 
+void add_node(); //to be defined
 
 
 
