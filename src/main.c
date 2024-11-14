@@ -30,7 +30,8 @@ int main() {
     displayMap(map);
     printf("Map displayed\n");
 
-    /* let's now find the base station position */
-    printf("Base station position : x = %d and y = %d\n", findBaseCoordinate(map).x, findBaseCoordinate(map).y);
+    t_localisation i_loc = loc_init(1,1,NORTH);
+    p_node new_node = create_node(i_loc,1,0,9);
+    printf("The cost of the initial node is : %d",new_node->value);
     return 0;
 }

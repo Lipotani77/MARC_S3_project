@@ -28,7 +28,7 @@ typedef struct s_node
     int value;
     t_localisation loc;
     t_move move;
-    struct s_node *sons[MAXI_MOVES];
+    struct s_node **sons;
     int depth;
     int nbSons;
 } t_node, *p_node;

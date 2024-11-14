@@ -8,7 +8,7 @@
 #include "../include/path.h"
 
 
-ht_path create_ht_path()
+/*ht_path create_ht_path()
 {
     ht_path path;
     path.head = NULL;
@@ -38,4 +38,4 @@ void insertTail(ht_path *path, t_node *node)
     }
 }
 
-
+*/
