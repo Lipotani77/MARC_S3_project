@@ -19,4 +19,11 @@ t_tree create_tree(t_localisation loc, t_map map, hand hand_of_moves){
     return new_tree;
 }
 
+//recursive function to create the n under nodes
+void recursive_creation(t_node * actual_node, hand * hand, t_tree* tree){
 
+    while (HANDLENGHT > 0){
+        if ()
+
+    }
+}

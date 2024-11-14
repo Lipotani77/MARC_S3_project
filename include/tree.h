@@ -36,7 +36,7 @@ typedef  struct N_ary_tree
 
 tree create_tree(t_localisation, t_map, hand);
 
-recursive_creation(t_node *, hand, );
+void recursive_creation(t_node *, hand, t_tree*);
 
 
 #endif //TREE_H
