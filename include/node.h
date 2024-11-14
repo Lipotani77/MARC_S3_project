@@ -22,9 +22,7 @@ typedef struct s_node
     int LS; // 5 - the depth of the node
     */
     int cost; // the cost of the node
-    int x; // x position of the node in the map so the position of the robot if it goes to this node
-    int y; // y position of the node in the map so the position of the robot if it goes to this node
-    t_orientation orientation; // orientation of the robot
+    t_localisation loc; // the position of the node
     char move[20]; // the move that led to this node
     struct s_node *sons[ACTION_SIZE]; // the sons of the node
     int depth; // the depth of the node, to be initialized to 0, and should not exceed 5 or 4 as a phase has 5 or 4 moves
