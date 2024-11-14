@@ -10,6 +10,8 @@
 /**
  * @brief Structure of a node
  */
+
+
 typedef  struct N_ary_tree
 {
     p_node root; // the root of the tree, its position is the position of the robot when the phase starts
