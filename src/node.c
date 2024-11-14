@@ -20,5 +20,6 @@ p_node create_node(int cost, int x, int y, t_orientation orientation, char *move
             new_node->sons[i] = NULL; // initialize the sons to NULL as we don't have any children yet
         }
     }
+
     return new_node;
 }
