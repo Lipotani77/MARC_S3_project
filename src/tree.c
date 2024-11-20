@@ -7,19 +7,20 @@
 t_tree create_tree(t_stack *drawn_moves,p_node root){
     p_tree new_tree = (p_tree)malloc(sizeof(t_tree));
     new_tree->root = root;
-    p_node current_node = root;
-
+    //p_node current_node = root;
+    return *new_tree ;
 }
 
 
-t_tree recursive_tree_creation(t_map map, t_localisation loc){
+t_tree recursive_tree_creation(t_map map, t_localisation loc, t_stack moves){
 
 
     int depth = 0 ;
 
     t_node * node = create_node(loc, map.costs[loc.pos.x][loc.pos.y], depth , NB_SONS - depth);
 
-    t_tree  tree = create_tree(node) ;
+    t_tree tree ;
+    tree = create_tree(&moves, node);
 
 
     return tree ;
