@@ -43,8 +43,12 @@ void tree_recursive_function(t_node * node, t_stack moves, t_map map){
 
         temp = create_node(new_loc, map.costs[new_loc.pos.x][new_loc.pos.y], node->depth + 1, NB_SONS - (node->depth+1));
 
+        temp->move = move1 ;
+
         node->sons[stop] = temp;
 
+        //add recursion here : you need the node you just created, the set of possible moves and just pass the map for
+        // node creation (useful to get the cost of each location).
 
         stop ++ ;
     }
