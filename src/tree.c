@@ -4,13 +4,13 @@
 #include "../include/moves.h"
 #define NB_SONS  7
 
-t_tree create_tree(t_node *node)
-{
-    t_tree tree;
-    tree.root = node;
+t_tree create_tree(t_stack *drawn_moves,p_node root){
+    p_tree new_tree = (p_tree)malloc(sizeof(t_tree));
+    new_tree->root = root;
+    p_node current_node = root;
 
-    return tree;
 }
+
 
 t_tree recursive_tree_creation(t_map map, t_localisation loc){
 

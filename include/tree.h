@@ -5,6 +5,8 @@
 #define MAXI_MOVES 9  // 9 movements available per phase
 
 #include "node.h"
+#include "queue.h"
+#include "draw.h"
 #include "loc.h"
 #include "stack.h"
 
@@ -16,7 +18,7 @@
 typedef struct
 {
     t_node *root;
-} t_tree;
+} t_tree, *p_tree;
 
 /**
  * @brief Function to create a tree
@@ -27,7 +29,8 @@ typedef struct
  * @param move : here at the creation of the tree we will set the value to "start"
  * @return the node
  */
-t_tree create_tree(t_node *);
+t_tree create_tree(t_stack *,p_node);
+
 
 t_tree recursive_tree_creation(t_map map, t_localisation loc);
 
