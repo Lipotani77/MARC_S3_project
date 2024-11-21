@@ -9,6 +9,10 @@
 #include "draw.h"
 #include "loc.h"
 #include "stack.h"
+#include "../include/tree.h"
+#include <stdlib.h>
+#include <stdio.h>
+#include "../include/moves.h"
 
 /**
  * @brief structure for the N-ary tree
@@ -35,6 +39,9 @@ t_tree create_tree(t_stack *,p_node);
 t_tree recursive_tree_creation(t_map map, t_localisation loc, t_stack moves);
 
 void tree_recursive_function(t_node *, t_stack, t_map map);
+
+p_node createNaryTree(t_localisation, int, int);
+
 
 
 #endif //TREE_H

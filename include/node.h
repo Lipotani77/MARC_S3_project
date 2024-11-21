@@ -33,9 +33,16 @@ typedef struct s_node
     int nbSons;
 } t_node, *p_node;
 
+/**
+ * @brief structure for the node of the N-ary tree
+ * @param loc : coordinates and orientation on the map
+ * @param value : the node's value => the square's cost
+ *
+ * @return the new node
+ */
 t_node *create_node(t_localisation, int, int, int);
 
-void add_node(); //to be defined
+void add_node(p_node, p_node); //to be defined
 
 
 

@@ -1,7 +1,4 @@
 #include "../include/tree.h"
-#include <stdlib.h>
-#include <stdio.h>
-#include "../include/moves.h"
 #define NB_SONS  7
 
 t_tree create_tree(t_stack *drawn_moves,p_node root){
@@ -55,4 +52,25 @@ void tree_recursive_function(t_node * node, t_stack moves, t_map map){
     }
 
 
+}
+
+p_node createNaryTree(t_localisation startLoc, int startValue, int depth) {
+    t_stack hand = draw_hand();
+    p_node root = create_node(startValue, startLoc, NONE, 0);
+
+    if (depth == 0) return root;
+
+    for (int i = 0; i < 9; i++) { //iterate through the 9 sons of the root that are the one that we drew at the beginning of a phase
+        t_move move = pop(&hand);
+
+        t_localisation newLoc = applyMove(startLoc, move); // Implement this function to update location based on move, Idrissa function
+        int newValue = getValue(newLoc); // Implement this function to get the value of the new location
+        p_node newNode = createNode(newValue, newLoc, move, depth - 1);
+
+        add_node(root, newNode); // Implement this function to add a son to a node
+        if (depth > 1) { // have to put here all the conditions to stop the recursion as for example if the rover dies
+            addSon(root, createNaryTree(newLoc, newValue, depth - 1));
+        }
+    }
+    return root;
 }
