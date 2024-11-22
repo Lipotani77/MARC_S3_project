@@ -19,19 +19,20 @@ t_tree recursive_tree_creation(t_map map, t_localisation loc, t_stack moves){
     t_tree tree ;
     tree = create_tree(&moves, node);
 
-    tree_recursive_function(node, moves, map);
+    tree_recursive_function(node, &moves, map);
 
     return tree ;
 }
-
+/*
 void tree_recursive_function(t_node * node, t_stack moves, t_map map){
 
-    t_node * temp ;
     int stop = 0 ;
     t_stack untouched_save = moves ;
     t_stack moves_for_recursion = moves ;
     t_move move1 ;
     t_localisation new_loc ;
+    t_node * temp = create_node(new_loc, map.costs[new_loc.pos.x][-new_loc.pos.y], node->depth + 1, NB_SONS - (node->depth+1));
+
 
     while (stop < NB_SONS - node->depth){
 
@@ -40,8 +41,6 @@ void tree_recursive_function(t_node * node, t_stack moves, t_map map){
         //push(&save, move1);
 
         new_loc = move(node->loc, move1) ;
-
-        temp = create_node(new_loc, map.costs[new_loc.pos.x][new_loc.pos.y], node->depth + 1, NB_SONS - (node->depth+1));
 
         temp->move = move1 ;
 
@@ -58,6 +57,43 @@ void tree_recursive_function(t_node * node, t_stack moves, t_map map){
 
 
 }
+*/
+void tree_recursive_function(t_node *node, t_stack *moves, t_map map) {
+
+    // Condition to stop the recursion
+    if (node->depth >= MAXI_DEPTH || NB_SONS - node->depth <= 0) {
+        return;
+    }
+
+    int stop = 0;
+
+    while (stop < NB_SONS - node->depth) {
+        if (is_stack_empty(moves)) {
+            break;
+        }
+
+        t_move move1 = pop(moves);
+        t_localisation new_loc = move(node->loc, move1);
+
+        if (!isValidLocalisation(new_loc.pos, new_loc.pos.x, new_loc.pos.y)) {
+            stop++;
+            continue;
+        }
+
+        t_node *temp = create_node(new_loc, map.costs[new_loc.pos.x][new_loc.pos.y],node->depth + 1, NB_SONS - (node->depth + 1));
+        temp->move = move1;
+        node->sons[stop] = temp;
+
+        t_stack moves_for_recursion = copy_stack(*moves);
+        removevalfromstack(&moves_for_recursion, move1);
+
+        tree_recursive_function(node->sons[stop], &moves_for_recursion, map);
+
+        stop++;
+        free_stack(moves_for_recursion);
+    }
+}
+
 
 
 

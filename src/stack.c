@@ -2,6 +2,7 @@
 // Created by flasque on 19/10/2024.
 //
 
+#include <stdio.h>
 #include <malloc.h>
 #include <assert.h>
 #include "../include/stack.h"
@@ -86,3 +87,37 @@ void removevalfromstack(t_stack *stack, int value){
     }
 
 }
+
+int is_stack_empty(t_stack* stack)
+{
+    return (stack->nbElts == 0);
+}
+
+t_stack copy_stack(t_stack stack)
+{
+    t_stack copy;
+
+    copy.size = stack.size;
+    copy.nbElts = stack.nbElts;
+    copy.values = malloc(copy.nbElts * sizeof(t_move));
+
+    for (int i = 0; i < stack.size; i++) {
+        copy.values[i] = stack.values[i];
+    }
+
+    return copy;
+}
+
+void free_stack(t_stack stack)
+{
+    if (stack.values != NULL)
+    {
+        free(stack.values);
+        stack.values = NULL;
+    }
+
+    stack.size = 0;
+    stack.values = 0;
+}
+
+
