@@ -7,6 +7,7 @@
 #include "../include/node.h"
 #include "../include/tree.h"
 
+
 int main() {
     srand((unsigned)time(NULL));
     t_map map = createMapFromFile("..\\maps\\example1.map");
@@ -45,5 +46,11 @@ int main() {
         printf("%s / ", getMoveAsString(temp));
     }
 */
+    t_stack hand ;
+    hand = draw_hand();
+    t_tree recursive_tree ;
+    recursive_tree = recursive_tree_creation(map, i_loc, hand);
+
+
     return 0;
 }

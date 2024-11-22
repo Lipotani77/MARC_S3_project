@@ -44,5 +44,7 @@ int pop(t_stack *);
  */
 int top(t_stack);
 
+void removevalfromstack(t_stack *stack, int value);
+
 
 #endif //UNTITLED1_STACK_H

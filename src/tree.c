@@ -19,6 +19,7 @@ t_tree recursive_tree_creation(t_map map, t_localisation loc, t_stack moves){
     t_tree tree ;
     tree = create_tree(&moves, node);
 
+    tree_recursive_function(node, moves, map);
 
     return tree ;
 }
@@ -27,7 +28,8 @@ void tree_recursive_function(t_node * node, t_stack moves, t_map map){
 
     t_node * temp ;
     int stop = 0 ;
-    t_stack save ;
+    t_stack untouched_save = moves ;
+    t_stack moves_for_recursion = moves ;
     t_move move1 ;
     t_localisation new_loc ;
 
@@ -35,7 +37,7 @@ void tree_recursive_function(t_node * node, t_stack moves, t_map map){
 
         move1 = pop(&moves);
 
-        push(&save, move1);
+        //push(&save, move1);
 
         new_loc = move(node->loc, move1) ;
 
@@ -45,6 +47,9 @@ void tree_recursive_function(t_node * node, t_stack moves, t_map map){
 
         node->sons[stop] = temp;
 
+        removevalfromstack(&moves_for_recursion, move1);
+
+        tree_recursive_function(node->sons[stop], moves_for_recursion, map);
         //add recursion here : you need the node you just created, the set of possible moves and just pass the map for
         // node creation (useful to get the cost of each location).
 
@@ -54,6 +59,9 @@ void tree_recursive_function(t_node * node, t_stack moves, t_map map){
 
 }
 
+
+
+/*
 p_node createNaryTree(t_localisation startLoc, int startValue, int depth) {
     t_stack hand = draw_hand();
     p_node root = create_node(startValue, startLoc, NONE, 0);
@@ -74,3 +82,4 @@ p_node createNaryTree(t_localisation startLoc, int startValue, int depth) {
     }
     return root;
 }
+*/

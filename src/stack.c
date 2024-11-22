@@ -61,3 +61,28 @@ int top(t_stack stack)
     assert(stack.nbElts > 0);
     return stack.values[stack.nbElts - 1];
 }
+
+void removevalfromstack(t_stack *stack, int value){
+    t_stack temp ;
+    temp = createStack(10);
+    int found = 0 ;
+    int tempval ;
+    int counter =0 ;
+    while (found == 0){
+
+        tempval = pop(stack);
+        if (tempval == value){
+            found = 1;
+        }
+        else{
+            push(&temp, tempval);
+        }
+        counter++;
+    }
+
+    while (counter >1){
+        push(stack, pop(&temp));
+        counter --;
+    }
+
+}

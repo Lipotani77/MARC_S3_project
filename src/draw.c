@@ -42,13 +42,13 @@ t_stack draw_hand(){
     t_stack hand ;
     hand = createStack(9);
     int number ;
-    number = rand()%100 ;
+    number = rand() %100 ;
 // we iterate 9 times, to draw the 9 cards from the deck
     for (int j = 0 ; j < 9 ; j++){
 
 //as long as we find an empty slot of card (card that has been taken), we keep drawing
         while (deck[number] == NONE){
-            number = rand()%100 ;
+            number = rand() %100 ;
         }
 //once found, we add the drawn card to the hand
         push(&hand, deck[number]);
