@@ -31,17 +31,25 @@ typedef struct s_node
     struct s_node **sons;
     int depth;
     int nbSons;
+    int maxSons;
 } t_node, *p_node;
 
 /**
  * @brief structure for the node of the N-ary tree
  * @param loc : coordinates and orientation on the map
  * @param value : the node's value => the square's cost
- *
+ * @param depth : the node's depth within the tree => at which number of moves over MAXI_DEPTH
+ * @param nb_sons : the maximum number of sons the node can have
  * @return the new node
  */
-t_node *create_node(t_localisation, int, int, int);
+t_node *create_node(t_localisation loc, int value, int depth, int nb_sons);
 
+/**
+ * @brief Function to add a node to the tree
+ * @param node : the node to add
+ * @param father : the father of the node
+ * @return void
+ */
 void add_node(p_node, p_node); //to be defined
 
 

@@ -8,7 +8,7 @@ t_tree create_tree(t_stack *drawn_moves,p_node root){
     return *new_tree ;
 }
 
-
+/*
 t_tree recursive_tree_creation(t_map map, t_localisation loc, t_stack moves){
 
 
@@ -57,5 +57,18 @@ void tree_recursive_function(t_node *node, t_stack *moves, t_map map) {
 
         stop++;
         free_stack(moves_for_recursion);
+    }
+}
+*/
+
+void add_node_same_depth(p_node parent_node, p_node son_node){
+    parent_node->sons[parent_node->nbSons] = son_node;
+    parent_node->nbSons++;
+}
+
+void tree_creation(t_node *node, t_stack *moves, t_map map, int nb_move){
+    t_stack *drawn_move = moves;
+    for(int i = 0; i < nb_move; i++){
+
     }
 }
