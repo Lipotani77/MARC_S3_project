@@ -59,8 +59,8 @@ int is_out_of_map(t_position rover_pos, t_map map){
     }
 }
 
-t_position findBaseCoordinate(t_map map){
-    t_position base_pos;
+t_position findBaseCoordinate(t_map map){ //explication: we take the map :
+    t_position base_pos; // c'est la position de la base donc I can take this for my function node_pos
     base_pos.x = -1;
     base_pos.y = -1;
     for(int i = 0; i < map.y_max; i++){ //loop through the map to find the base station, remember that the map is a 2D array
