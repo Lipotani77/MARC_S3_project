@@ -6,6 +6,7 @@ t_node *create_node(t_localisation loc, int value, int depth, int nb_sons){
     new_node->value = value;
     new_node->depth = depth;
     new_node->nbSons = nb_sons;
+    new_node->move = NONE; // we created a enum for no move
     if(nb_sons > 0){
         new_node->sons = (t_node **) malloc(nb_sons * sizeof(t_node*));
         for(int i = 0; i < nb_sons; i++){

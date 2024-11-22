@@ -36,21 +36,9 @@ int main() {
     p_node new_node = create_node(i_loc,1,0,9);
     printf("The cost of the initial node is : %d",new_node->value);
 
-    /*
-    printf("\n\n");
-    t_stack hand ;
-    hand = draw_hand();
-    t_move temp ;
-    for (int i = 0 ; i < 9 ; i++){
-        temp = pop(&hand);
-        printf("%s / ", getMoveAsString(temp));
-    }
-*/
-    t_stack hand ;
-    hand = draw_hand();
-    t_tree recursive_tree ;
-    recursive_tree = recursive_tree_creation(map, i_loc, hand);
 
-
+    t_stack hand = draw_hand();
+    t_tree tree_of_possibility = recursive_tree_creation(map, i_loc, hand);
+    printf("The value of the root is %d",tree_of_possibility.root->value);
     return 0;
 }
