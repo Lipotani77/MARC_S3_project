@@ -33,3 +33,8 @@ void display_level(p_node parent_node){
         printf("]\n");
     }
 }
+
+void add_node_same_depth(p_node parent_node, p_node son_node){
+    parent_node->sons[parent_node->nbSons] = son_node;
+    parent_node->nbSons++;
+}

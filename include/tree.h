@@ -35,16 +35,14 @@ typedef struct
  */
 t_tree create_tree(t_stack *,p_node);
 
-
-t_tree recursive_tree_creation(t_map map, t_localisation loc, t_stack moves);
-
-void tree_recursive_function(t_node *, t_stack*, t_map map);
-
-p_node createNaryTree(t_localisation, int, int);
-
-// functions to create the tree
-void add_node_same_depth(p_node parent_node, p_node son_node);
-void tree_creation(t_node *node, t_stack *moves, t_map map, int nb_move);
+/**
+ *
+ * @param moves the stack that contains all the move at a time t
+ * @param t_moves the array for the taken moves by MARC because we don't want to reuse the move from where we come from
+ * @param parent_node the node from where we start
+ * @param map the map
+ */
+void fill_moves_node(t_stack *moves, int* t_moves,p_node parent_node, t_map map);
 
 
 
