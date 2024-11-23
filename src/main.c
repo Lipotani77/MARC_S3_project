@@ -7,7 +7,9 @@
 #include "../include/node.h"
 #include "../include/tree.h"
 
-int main() {
+int main()
+
+{
     t_map map = createMapFromFile("..\\maps\\example1.map");
     printf("Map created with dimensions %d x %d\n", map.y_max, map.x_max);
     for (int i = 0; i < map.y_max; i++)

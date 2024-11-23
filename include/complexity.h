@@ -31,4 +31,13 @@
 
 
 
+/* The goal is to create a function that will take in parameter a starting time and an ending time and compute the time execution based on these two values.
+ * e.g : When we will create the tree, we will put at the first line of the function making the tree a variable containing the start time.
+ * The before before last line of the function will be a new variable with the end time, the penultimate line will be the call of the clock function to compute the time execution based on the 2 arguments which will be the start and end time.
+ * Finally the last line of the tree making function will display the clock than only return the tree. */
+
+
+
+
+
 #endif //UNTITLED1_COMPLEXITY_H
