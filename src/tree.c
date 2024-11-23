@@ -26,6 +26,8 @@ t_tree recursive_tree_creation(t_map map, t_localisation loc, t_stack moves){
 
 void tree_recursive_function(t_node *node, t_stack *moves, t_map map) {
 
+
+
     // Condition to stop the recursion
     if (node->depth >= MAXI_DEPTH || NB_SONS - node->depth <= 0) {
         return;
@@ -72,3 +74,5 @@ void tree_creation(t_node *node, t_stack *moves, t_map map, int nb_move){
         int p = 7;
     }
 }
+
+
