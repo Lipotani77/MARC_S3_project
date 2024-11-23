@@ -42,7 +42,7 @@ t_tree create_tree(t_stack *,p_node);
  * @param parent_node the node from where we start
  * @param map the map
  */
-void fill_moves_node(t_stack *moves, int* t_moves,p_node parent_node, t_map map);
+t_stack fill_moves_node(t_stack *moves,p_node parent_node, t_map map);
 
 
 

@@ -33,13 +33,19 @@ int main() {
     printf("Map displayed\n");
 
     t_localisation i_loc = loc_init(1,1,NORTH);
-    p_node new_node = create_node(i_loc,1,0,9);
-    printf("The cost of the initial node is : %d\n",new_node->value);
+    p_node root = create_node(i_loc,1,0,9);
+    printf("The cost of the initial node is : %d\n",root->value);
 
 
     t_stack hand = draw_hand();
-    t_tree tree_of_possibility = create_tree(&hand,new_node);
-    printf("The value of the root is %d\n",tree_of_possibility.root->value);
+    printf("Marc have the following possibility : ");
+    for(int i = 0; i < hand.nbElts; i++){
+        printf("%d ",hand.values[i]);
+    }
+    printf("\n");
+
+    t_stack copy_hand = fill_moves_node(&hand,root,map);
+    display_level(root);
 
     return 0;
 }

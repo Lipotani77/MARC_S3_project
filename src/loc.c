@@ -86,3 +86,15 @@ int is_at_base_station(t_position base_pos, t_position MARC_pos){
         return 0;
     }
 }
+
+int retrieve_cost(t_localisation localisation, t_map map){
+    if (localisation.pos.x < 0 || localisation.pos.x >= map.x_max ||
+        localisation.pos.y < 0 || localisation.pos.y >= map.y_max) {
+        fprintf(stderr, "Erreur : indices hors limites (%d, %d) pour la carte de dimensions (%d, %d)\n",
+                localisation.pos.x, localisation.pos.y, map.x_max, map.y_max);
+        return -1;
+    }
+    else{
+        return map.costs[localisation.pos.x][localisation.pos.y];
+    }
+}
