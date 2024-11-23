@@ -95,16 +95,17 @@ int is_stack_empty(t_stack* stack)
 
 t_stack copy_stack(t_stack stack)
 {
-    t_stack copy;
+    t_stack copy = createStack(stack.size); // create an empty stack with the same size
 
-    copy.size = stack.size;
-    copy.nbElts = stack.nbElts;
-    copy.values = malloc(copy.nbElts * sizeof(t_move));
-
-    for (int i = 0; i < stack.size; i++) {
-        copy.values[i] = stack.values[i];
+    if (stack.values == NULL) { // if the stack is empty, return the empty stack
+        printf("The stack you are trying to copy is empty\n");
+        return copy;
     }
-
+    else{
+        for (int i = 0; i < stack.size; i++) { // copy the values
+            copy.values[i] = stack.values[i];
+        }
+    }
     return copy;
 }
 
