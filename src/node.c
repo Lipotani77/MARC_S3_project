@@ -17,7 +17,6 @@ t_node *create_node(t_localisation loc, int value, int depth, int nb_sons){
     }
     new_node->depth = depth;
     new_node->nbSons = 0;
-    new_node->maxSons = nb_sons;
     return new_node;
 }
 

@@ -31,7 +31,6 @@ typedef struct s_node
     struct s_node **sons;
     int depth;
     int nbSons;
-    int maxSons;
 } t_node, *p_node;
 
 /**
