@@ -30,11 +30,10 @@ int main() {
         printf("\n");
     }
     displayMap(map);
-    printf("Map displayed\n");
+    printf("Map displayed\n\n");
 
-    t_localisation i_loc = loc_init(1,1,NORTH);
+    t_localisation i_loc = loc_init(6,6,NORTH);
     p_node root = create_node(i_loc,1,0,9);
-    printf("The cost of the initial node is : %d\n",root->value);
 
 
     t_stack hand = draw_hand();
@@ -46,6 +45,7 @@ int main() {
 
     t_stack copy_hand = fill_moves_node(&hand,root,map);
     display_level(root);
+    printf("The number of sons of the first sons of the root is : %d\n",root->sons[0]->nbSons);
 
     return 0;
 }

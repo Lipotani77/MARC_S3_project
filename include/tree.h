@@ -9,6 +9,7 @@
 #include "draw.h"
 #include "loc.h"
 #include "stack.h"
+#include "moves.h"
 #include "../include/tree.h"
 #include <stdlib.h>
 #include <stdio.h>
