@@ -105,24 +105,25 @@ int min_path(p_node node, t_stack * path){
         return 0 ;
     }
 
-    int min = minnode(node);
-    push(path, node->sons[min]->value);
-    min_path(node->sons[min], path);
-    return 0;
+    int min_idx = minnode(node);
+    push(path, node->sons[min_idx]->move);
+
+
+    return node->sons[min_idx]->value +  min_path(node->sons[min_idx], path);
 }
 
 int minnode(p_node parent){
 
-    int max = parent->sons[0]->value;
-    int max_idx = 0 ;
+    int min = parent->sons[0]->value;
+    int min_idx = 0 ;
     for (int i = 1 ; i < parent->nbSons ; i++){
         if(parent->sons[i] == NULL){
             continue ;
         }
-        if(parent->sons[i]->value > max){
-            max = parent->sons[i]->value ;
-            max_idx = i ;
+        if(parent->sons[i]->value < min){
+            min = parent->sons[i]->value ;
+            min_idx = i ;
         }
     }
-    return max_idx;
+    return min_idx;
 }
