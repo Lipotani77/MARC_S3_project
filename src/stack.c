@@ -69,7 +69,7 @@ void removevalfromstack(t_stack *stack, int value){
     int found = 0 ;
     int tempval ;
     int counter =0 ;
-    while (found == 0){
+    while ((found == 0) & !is_stack_empty(stack)){
 
         tempval = pop(stack);
         if (tempval == value){

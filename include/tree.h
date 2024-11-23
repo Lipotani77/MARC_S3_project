@@ -48,6 +48,8 @@ void tree_creation(t_node *node, t_stack *moves, t_map map, int nb_move);
 
 void display_tree(t_node *node, int level) ;
 
+int minnode(p_node parent) ;
+
 
 
 #endif //TREE_H

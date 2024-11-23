@@ -98,3 +98,31 @@ void display_tree(t_node *node, int level) {
         display_tree(node->sons[i], level + 1);
     }
 }
+
+int min_path(p_node node, t_stack * path){
+
+    if(node->nbSons==0 ||node->depth > 5){
+        return 0 ;
+    }
+
+    int min = minnode(node);
+    push(path, node->sons[min]->value);
+    min_path(node->sons[min], path);
+    return 0;
+}
+
+int minnode(p_node parent){
+
+    int max = parent->sons[0]->value;
+    int max_idx = 0 ;
+    for (int i = 1 ; i < parent->nbSons ; i++){
+        if(parent->sons[i] == NULL){
+            continue ;
+        }
+        if(parent->sons[i]->value > max){
+            max = parent->sons[i]->value ;
+            max_idx = i ;
+        }
+    }
+    return max_idx;
+}
