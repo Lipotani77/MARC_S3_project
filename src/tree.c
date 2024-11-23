@@ -43,7 +43,7 @@ void tree_recursive_function(t_node *node, t_stack *moves, t_map map) {
         t_move move1 = pop(moves);
         t_localisation new_loc = move(node->loc, move1);
 
-        if (!isValidLocalisation(new_loc.pos, new_loc.pos.x, new_loc.pos.y)) {
+        if (!isValidLocalisation(new_loc.pos, map.x_max, map.y_max)) {
             stop++;
             continue;
         }
@@ -64,7 +64,15 @@ void tree_recursive_function(t_node *node, t_stack *moves, t_map map) {
 
 
 void add_node_same_depth(p_node parent_node, p_node son_node){
-    parent_node->sons[parent_node->nbSons] = son_node;
+    if (son_node->nbSons >= son_node->maxSons){
+        return ;
+    }
+    int counter = 0 ;
+    while (parent_node->sons[counter] != NULL){
+        counter ++ ;
+    }
+    //
+    parent_node->sons[counter] = son_node;
     parent_node->nbSons++;
 }
 
@@ -76,3 +84,17 @@ void tree_creation(t_node *node, t_stack *moves, t_map map, int nb_move){
 }
 
 
+void display_tree(t_node *node, int level) {
+    if (node == NULL) return;
+
+
+    for (int i = 0; i < level; i++) {
+        printf("  "); // Indentation
+    }
+    printf("%d\n", node->value);
+
+
+    for (int i = 0; i < node->nbSons; i++) {
+        display_tree(node->sons[i], level + 1);
+    }
+}

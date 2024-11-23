@@ -41,8 +41,8 @@ int main() {
     t_tree tree_of_possibility = recursive_tree_creation(map, i_loc, hand);
     printf("The value of the root is %d\n",tree_of_possibility.root->value);
 
+    //display_tree(tree_of_possibility.root, 0);
 
 
-
-    return 0;
+    return 0 ;
 }
