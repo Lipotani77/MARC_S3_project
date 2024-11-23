@@ -50,6 +50,8 @@ void display_tree(t_node *node, int level) ;
 
 int minnode(p_node parent) ;
 
+int min_path(p_node node, t_stack * path) ;
+
 
 
 #endif //TREE_H
