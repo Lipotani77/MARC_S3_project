@@ -52,6 +52,11 @@ t_node *create_node(t_localisation loc, int value, int depth, int nb_sons);
  */
 void add_node(p_node, p_node); //to be defined
 
-
+/**
+ * @brief Function to display the sons of a node
+ * @param parent_node : the node to display the sons
+ * @return nothing
+ */
+void display_level(p_node);
 
 #endif //NODE_H

@@ -20,3 +20,17 @@ t_node *create_node(t_localisation loc, int value, int depth, int nb_sons){
     new_node->maxSons = nb_sons;
     return new_node;
 }
+
+void display_level(p_node parent_node){
+    if (parent_node->sons[0] == NULL){
+        printf("This node has no sons node\n");
+    }
+    else{
+        printf("The son(s) of the parent node %d are : \n",parent_node->value);
+        printf("[ ");
+        for(int i = 0; i < parent_node->nbSons; i++){
+            printf("%d ", parent_node->sons[i]->value);
+        }
+        printf("]\n");
+    }
+}

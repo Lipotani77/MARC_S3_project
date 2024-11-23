@@ -69,6 +69,6 @@ void add_node_same_depth(p_node parent_node, p_node son_node){
 void tree_creation(t_node *node, t_stack *moves, t_map map, int nb_move){
     t_stack *drawn_move = moves;
     for(int i = 0; i < nb_move; i++){
-
+        int p = 7;
     }
 }

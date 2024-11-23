@@ -44,6 +44,10 @@ int main() {
 
     p_node sons1 = create_node(i_loc,1,1,8);
     add_node_same_depth(new_node,sons1);
+    add_node_same_depth(new_node,sons1);
+    add_node_same_depth(new_node,sons1);
+    add_node_same_depth(new_node,sons1);
+    display_level(new_node);
 
     return 0;
 }
