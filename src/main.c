@@ -40,6 +40,7 @@ int main() {
     t_stack hand = draw_hand();
     t_tree tree_of_possibility = recursive_tree_creation(map, i_loc, hand);
     printf("The value of the root is %d\n",tree_of_possibility.root->value);
+    display_level(tree_of_possibility.);
 
 
 
