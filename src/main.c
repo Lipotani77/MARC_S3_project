@@ -36,18 +36,13 @@ int main() {
     p_node new_node = create_node(i_loc,1,0,9);
     printf("The cost of the initial node is : %d\n",new_node->value);
 
-    /*
+
     t_stack hand = draw_hand();
     t_tree tree_of_possibility = recursive_tree_creation(map, i_loc, hand);
     printf("The value of the root is %d\n",tree_of_possibility.root->value);
-    */
 
-    p_node sons1 = create_node(i_loc,1,1,8);
-    add_node_same_depth(new_node,sons1);
-    add_node_same_depth(new_node,sons1);
-    add_node_same_depth(new_node,sons1);
-    add_node_same_depth(new_node,sons1);
-    display_level(new_node);
+
+
 
     return 0;
 }
