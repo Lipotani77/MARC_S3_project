@@ -56,6 +56,6 @@ dkms.conf
 CMakeLists.txt
 *.cmake
 *.yaml
-
+*.xml
 # Sticky notes
 reminder.txt
