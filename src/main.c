@@ -45,7 +45,7 @@ int main() {
 
 
     t_stack hand = draw_hand();
-    printf("Marc have the following possibility : ");
+    printf("Marc have the following possibility : | ");
     for(int i = 0; i < hand.nbElts; i++){
         printf("%s | ", getMoveAsString(hand.values[i]));
     }
@@ -58,6 +58,7 @@ int main() {
 
     printf("\n dimension of x : %d", map.x_max);
     printf("\n dimension of y : %d", map.y_max);
+
 
     return 0;
 }
