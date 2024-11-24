@@ -18,7 +18,7 @@ void displaytable(t_map map){
 
 int main() {
     srand((unsigned)time(NULL));
-    t_map map = createMapFromFile("..\\maps\\example1.map");
+    t_map map = createMapFromFile("..\\maps\\example2.map");
     printf("Map created with dimensions %d x %d\n", map.y_max, map.x_max);
     for (int i = 0; i < map.y_max; i++)
     {
@@ -37,8 +37,9 @@ int main() {
         }
         printf("\n");
     }
-    displayMap(map);
+    displayColoredMap(map);
     printf("Map displayed\n\n");
+    displayLegend();
 
     t_localisation i_loc = loc_init(5,5,NORTH);
     p_node root = create_node(i_loc,1,0,9);

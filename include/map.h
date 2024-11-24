@@ -60,7 +60,7 @@ t_map createMapFromFile(char *);
  t_map createTrainingMap();
 
 /**
- * @brief display the map with characters
+ * @brief display the map with characters.
  * @param map : the map to display
  */
 void displayMap(t_map);
