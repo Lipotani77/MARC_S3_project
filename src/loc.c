@@ -94,6 +94,6 @@ int retrieve_cost(t_localisation localisation, t_map map){
         return -1;
     }
     else{
-        return map.costs[localisation.pos.x][localisation.pos.y];
+        return map.costs[localisation.pos.y][localisation.pos.x];
     }
 }
