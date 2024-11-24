@@ -59,7 +59,11 @@ int main() {
     printf("\n dimension of x : %d", map.x_max);
     printf("\n dimension of y : %d", map.y_max);
 
-
+    tree_recursive(root, &copy_hand, map, 5);
+    //display the second son of the root
+    for (int i = 0; i < 3; i++){
+        display_level(root->sons[1]->sons[i]);
+    }
 
     return 0;
 }

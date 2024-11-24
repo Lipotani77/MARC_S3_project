@@ -34,7 +34,7 @@ typedef struct
  * @param move : here at the creation of the tree we will set the value to "start"
  * @return the node
  */
-t_tree create_tree(t_stack *,p_node);
+t_tree create_empty_tree(t_stack *,p_node);
 
 
 void display_tree(t_node *node, int level);
@@ -42,6 +42,15 @@ void display_tree(t_node *node, int level);
 int min_path(p_node node, t_stack * path);
 
 int minnode(p_node parent);
+
+/**
+ * @brief Function to create the tree of possibilities
+ * @param parent_node : the node from which we will create the tree
+ * @param moves : the stack of moves that MARC can do
+ * @param map : the map
+ * @param max_depth : the maximum depth of the tree, that is the number of moves that MARC can do at a given phase
+ */
+void tree_recursive(p_node parent_node, t_stack *moves, t_map map, int max_depth);
 
 
 #endif //TREE_H

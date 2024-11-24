@@ -2,7 +2,7 @@
 #define NB_SONS  7
 
 
-t_tree create_tree(t_stack *drawn_moves,p_node root){
+t_tree create_empty_tree(t_stack *drawn_moves,p_node root){
     p_tree new_tree = (p_tree)malloc(sizeof(t_tree));
     new_tree->root = root;
     //p_node current_node = root;
@@ -92,4 +92,26 @@ int minnode(p_node parent){
         }
     }
     return min_idx;
+}
+
+void tree_recursive(p_node parent_node, t_stack *moves, t_map map, int max_depth) {
+    // If the depth of the parent node is greater than the maximum depth, we stop the recursion
+    // We can put further conditions to stop the recursion
+    if (parent_node->depth >= max_depth) {
+        printf("The maximum depth has been reached\n");
+        return;
+    }
+
+    // fill the sons of the parent node given in parameter
+    t_stack moves_stack_copy = fill_moves_node(moves, parent_node, map);
+    printf("The number of sons of the parent node %d is : %d\n", parent_node->value, parent_node->nbSons);
+    printf("The sons have been successfully added\n");
+
+    // apply the recursion for each son of the parent node
+    for (int i = 0; i < parent_node->nbSons; i++) {
+        // retrieve the current son
+        p_node child_node = parent_node->sons[i];
+        // apply the recursion for the current son
+        tree_recursive(child_node, &moves_stack_copy, map, max_depth);
+    }
 }
