@@ -5,7 +5,6 @@
 //#include ""
 
 
-
 /*
  * The goal is to create a function that will take in parameter a starting time and an ending time and compute the time execution based on these two values.
  * e.g : When we will create the tree, we will put at the first line of the function making the tree a variable containing the start time.
