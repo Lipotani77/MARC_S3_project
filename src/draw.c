@@ -3,7 +3,7 @@
 //
 #include "../include/draw.h"
 #include <stdlib.h>
-#define SIZE_OF_HAND 7
+#define SIZE_OF_HAND 6
 
 t_stack draw_hand(){
 

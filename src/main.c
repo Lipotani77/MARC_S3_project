@@ -7,6 +7,7 @@
 #include "../include/node.h"
 #include "../include/tree.h"
 
+
 void displaytable(t_map map){
     for (int i = 0 ; i < map.y_max ; i++){
         for (int j = 0 ; j < map.x_max ; j++){
@@ -62,19 +63,26 @@ int main() {
     //fill_moves_node(&hand,root,map);
     //display_level(root);
 
-    /*
-    t_stack copy_hand = fill_moves_node(&hand,root,map);
-    display_level(root);
-    printf("The number of sons of the first sons of the root is : %d\n",root->sons[0]->nbSons);*/
+    //*/
+    //t_stack copy_hand = fill_moves_node(&hand,root,map);
 
+    //printf("The number of sons of the first sons of the root is : %d\n",root->sons[0]->nbSons);
+    //
     //displaytable(map);
 
 
 
+    tree_recursive(root, &hand, map, 5);
 
-    tree_recursive(root, &hand, map, 2);
     //display the second son of the root
-    display_level(root->sons[0]);
+    //display_tree(root, 0);
+    //display_level(root);
+    //display_level(root->sons[0]);
+    //display_level(root->sons[0]->sons[0]);
+
+    t_stack path = createStack(9);
+    min_path(root, &path);
+    displayStack(path);
 
 
     return 0;
