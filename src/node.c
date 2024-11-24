@@ -66,6 +66,7 @@ t_stack fill_moves_node(t_stack *moves,p_node parent_node, t_map map){
 
         // finally we need to the number of sons
         int nb_sons = MAXI_MOVES - new_depth;
+        printf("The number of sons of the new node is : %d\n",nb_sons);
 
         // now we have all the component to initialize the new node
         p_node node_to_add = create_node(new_localisation, new_cost, new_depth, nb_sons);
