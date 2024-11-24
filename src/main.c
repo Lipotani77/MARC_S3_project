@@ -46,7 +46,7 @@ int main() {
 
 
     t_stack hand = draw_hand();
-    printf("Marc have the following possibility : | ");
+    printf("Marc have the following possibility :\n |");
     for(int i = 0; i < hand.nbElts; i++){
         printf("%s | ", getMoveAsString(hand.values[i]));
     }
