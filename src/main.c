@@ -42,10 +42,9 @@ int main() {
     printf("\ndimension of y : %d", map.y_max);
     displayLegend();
 
-    t_localisation i_loc = loc_init(5,5,NORTH);
-    p_node root = create_node(i_loc,1,0,9);
 
 
+    //draw the hand of possible choices for Marc for the first phase
     t_stack hand = draw_hand();
     printf("Marc have the following possibility :\n| ");
     for(int i = 0; i < hand.nbElts; i++){
@@ -53,8 +52,22 @@ int main() {
     }
     printf("\n");
 
-    //create the initial node that will be our root
 
+
+    t_stack hand_2 = remove_current_move_from_stack(&hand, 7);
+    printf("Marc has now the following possibilities:\n| ");
+    printf("This stack has %d element",hand_2.nbElts);
+
+
+
+    //create the initial node that will be our root
+    t_localisation i_loc = loc_init(5,5,NORTH);
+    p_node root = create_node(i_loc,1,0,9);
+
+
+    //fill the tree with the possible moves
+    fill_moves_node(&hand,root,map);
+    display_level(root);
 
 
     /*t_stack copy_hand = fill_moves_node(&hand,root,map);

@@ -32,6 +32,7 @@ typedef struct s_node
     struct s_node **sons;
     int depth;
     int nbSons;
+    int nbSonsMax;
 } t_node, *p_node;
 
 /**
@@ -52,6 +53,12 @@ t_node *create_node(t_localisation loc, int value, int depth, int nb_sons);
  */
 void add_node(p_node, p_node); //to be defined
 
+/**
+ * @brief Function to add a node to the tree
+ * @param parent_node : the father of the node
+ * @param son_node : the node to add
+ * @return void
+ */
 void add_node_same_depth(p_node parent_node, p_node son_node);
 
 
@@ -71,5 +78,7 @@ void display_level(p_node);
  * @return the stack of moves
  */
 t_stack fill_moves_node(t_stack *moves,p_node parent_node, t_map map);
+
+void display_info_node(p_node node);
 
 #endif //NODE_H

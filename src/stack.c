@@ -9,7 +9,7 @@
 
 /**
  * @brief Function to create a stack
- * @param size : the size of the stack
+ * @param size : the physical size of the stack
  * @return the stack
  */
 t_stack createStack(int size)
@@ -120,5 +120,26 @@ void free_stack(t_stack stack)
     stack.size = 0;
     stack.values = 0;
 }
+
+t_stack remove_current_move_from_stack(t_stack *stack, t_move move) {
+    // Create a new stack to hold elements excluding the given move
+    t_stack new_stack = createStack(stack->size); // Create an empty stack struct
+
+    // Temporary stack to iterate through the original stack without modifying it
+    t_stack temp_stack = copy_stack(*stack); // Create a copy of the original stack
+
+    // Iterate through the copied stack
+    while (!is_stack_empty(&temp_stack)) {
+        int current_move = pop(&temp_stack); // Pop from the copied stack
+        if (current_move != move) {
+            push(&new_stack, current_move); // Add to the new stack if it doesn't match the move
+        }
+    }
+
+    // Return the newly created stack
+    return new_stack;
+}
+
+
 
 

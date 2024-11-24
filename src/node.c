@@ -24,7 +24,8 @@ t_node *create_node(t_localisation loc, int value, int depth, int nb_sons){
         new_node->sons = NULL;
     }
     new_node->depth = depth;
-    new_node->nbSons = nb_sons;
+    new_node->nbSonsMax = nb_sons;
+    new_node->nbSons = 0;
     return new_node;
 }
 
@@ -57,31 +58,38 @@ t_stack fill_moves_node(t_stack *moves,p_node parent_node, t_map map){
         // But first we have to find all its component
         int poped_move = pop(moves); // retrieve the move on the top of the stack
         t_move converted_move = (t_move)poped_move;
-        //printf("The move we are going to pop is : %d\n",poped_move);
 
         // But first we have to compute the value of the new node : that is the cost associated with the poped move
-        //printf("The parent node have the following localisation : x = %d, y = %d, orientation = %d\n",parent_node->loc.pos.x,parent_node->loc.pos.y,parent_node->loc.ori);
         t_localisation new_localisation = move(parent_node->loc, converted_move); //that's what we do here
-        //printf("The new localisation is : x = %d, y = %d, orientation = %d\n",new_localisation.pos.x,new_localisation.pos.y,new_localisation.ori);
-        //printf("The new localisation have been successfully computed\n");
+
 
         // now we have to retrieve the cost associated to this new localisation
         int new_cost = retrieve_cost(new_localisation,map);
-        //printf("The new cost have been successfully computed\n");
+
 
         // maybe we have to retrieve the depth but don't know now, so we skip it
         int new_depth = parent_node->depth + 1;
-        printf("The son's new depth is : %d\n",new_depth);
+
 
         // finally we need to the number of sons
         int nb_sons = MAXI_MOVES - new_depth;
-        printf("The number of sons of the new node is : %d\n",nb_sons);
+
 
         // now we have all the component to initialize the new node
         p_node node_to_add = create_node(new_localisation, new_cost, new_depth, nb_sons);
+        //printf("The node to add has the following value : %d\n",node_to_add->value);
+
 
         // we have initialized the new node to add, so now we add it
         add_node_same_depth(parent_node,node_to_add);
     }
     return moves_stack_copy;
+}
+
+void display_info_node(p_node node){
+    printf("The node has the following value : %d\n",node->value);
+    printf("The node has the following depth : %d\n",node->depth);
+    printf("The node has the following number of sons : %d\n",node->nbSons);
+    printf("The node has the following localisation : x = %d, y = %d, orientation = %d\n",node->loc.pos.x,node->loc.pos.y,node->loc.ori);
+    printf("The node can have at most %d sons\n",node->nbSonsMax);
 }
