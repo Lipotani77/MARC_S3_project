@@ -60,5 +60,6 @@ int main() {
     printf("\n dimension of y : %d", map.y_max);
 
 
+
     return 0;
 }

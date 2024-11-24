@@ -36,15 +36,12 @@ typedef struct
  */
 t_tree create_tree(t_stack *,p_node);
 
-/**
- *
- * @param moves the stack that contains all the move at a time t
- * @param t_moves the array for the taken moves by MARC because we don't want to reuse the move from where we come from
- * @param parent_node the node from where we start
- * @param map the map
- */
-t_stack fill_moves_node(t_stack *moves,p_node parent_node, t_map map);
 
+void display_tree(t_node *node, int level);
+
+int min_path(p_node node, t_stack * path);
+
+int minnode(p_node parent);
 
 
 #endif //TREE_H
