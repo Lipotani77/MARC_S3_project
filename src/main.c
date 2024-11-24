@@ -8,7 +8,7 @@
 #include "../include/tree.h"
 
 int main() {
-    t_map map = createMapFromFile("..\\maps\\example2.map");
+    t_map map = createMapFromFile("..\\maps\\example4.map");
     printf("Map created with dimensions %d x %d\n", map.y_max, map.x_max);
     for (int i = 0; i < map.y_max; i++)
     {
@@ -30,7 +30,16 @@ int main() {
     displayMap(map);
     printf("Map displayed\n");
 
-    t_localisation i_loc = loc_init(1,1,NORTH);
+    t_localisation loc;
+    loc.pos.x = 1;
+    loc.pos.y = 6;
+    loc.ori = EAST;
+
+    move_in_soil(&loc, map, F_10);
+    printf("New position = %d %d", loc.pos.x, loc.pos.y);
+
+
+
     //p_node new_node = create_node(i_loc,1,0,9);
     //printf("The cost of the initial node is : %d\n",new_node->value);
 
@@ -50,7 +59,7 @@ int main() {
 
 
     /* let's now find the base station position */
-    printf("Base station position : x = %d and y = %d\n", findBaseCoordinate(map).x, findBaseCoordinate(map).y);
+   /* printf("Base station position : x = %d and y = %d\n", findBaseCoordinate(map).x, findBaseCoordinate(map).y);
     int cost;
     cost = cost_node(findBaseCoordinate(map).x, findBaseCoordinate(map).y, map);
     printf("The cost is %d \n", cost);
@@ -58,4 +67,5 @@ int main() {
     test_exec_t = exec_time(2.71828,3.14159); // I choose somme random values
     printf("It took %lf sec to run", test_exec_t);
     return 0;
+    */
 }
