@@ -121,23 +121,48 @@ void free_stack(t_stack stack)
     stack.values = 0;
 }
 
-t_stack remove_current_move_from_stack(t_stack *stack, t_move move) {
+t_stack remove_current_move_from_stack(t_stack *stack, t_move move)
+{
     // Create a new stack to hold elements excluding the given move
-    t_stack new_stack = createStack(stack->size); // Create an empty stack struct
+    t_stack new_stack = createStack(stack->size);
 
     // Temporary stack to iterate through the original stack without modifying it
-    t_stack temp_stack = copy_stack(*stack); // Create a copy of the original stack
+    t_stack temp_stack = copy_stack(*stack);
+
+    // Flag to know if the move has already been found and removed
+    int found = 0;
 
     // Iterate through the copied stack
-    while (!is_stack_empty(&temp_stack)) {
+    while (!is_stack_empty(&temp_stack))
+    {
         int current_move = pop(&temp_stack); // Pop from the copied stack
-        if (current_move != move) {
-            push(&new_stack, current_move); // Add to the new stack if it doesn't match the move
+        if (!found && current_move == move)
+        {
+            found = 1; // Mark the move as found, and skip adding it to the new stack
+            continue;
         }
+
+        // Add to the new stack if it doesn't match the move
+        push(&new_stack, current_move);
     }
 
-    // Return the newly created stack
     return new_stack;
+}
+
+
+void displayStack(t_stack stack)
+{
+    if (stack.nbElts == 0)
+    {
+        printf("The stack is empty.\n");
+        return;
+    }
+
+    for (int i = 0; i != stack.nbElts; i++)
+    {
+        printf("%d, ", stack.values[i]);
+    }
+    printf("\n");
 }
 
 

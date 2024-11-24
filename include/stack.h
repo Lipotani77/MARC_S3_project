@@ -52,6 +52,8 @@ t_stack copy_stack(t_stack);
 void free_stack(t_stack);
 
 t_stack remove_current_move_from_stack(t_stack *stack, t_move move);
+void displayStack(t_stack);
+
 
 
 
