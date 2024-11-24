@@ -56,5 +56,6 @@ t_stack draw_hand(){
         deck[number] = NONE ;
 
     }
+    hand.nbElts = 9 ;
     return hand ;
 }
