@@ -18,8 +18,6 @@ add_executable(untitled1 src/main.c
         include/node.h
         src/tree.c
         include/tree.h
-        include/path.h
-        src/path.c
         include/draw.h
         src/draw.c
         src/complexity.c

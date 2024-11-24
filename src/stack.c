@@ -161,7 +161,7 @@ void displayStack(t_stack stack)
 
     for (int i = 0; i != stack.nbElts; i++)
     {
-        printf("%s, ", getMoveAsString(stack.values[i]));
+        printf("%s ", getMoveAsString(stack.values[i]));
     }
     printf("\n");
 }

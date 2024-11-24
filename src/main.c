@@ -72,24 +72,41 @@ int main() {
 
 
 
-    clock_t start = clock();
-    tree_recursive(root, &hand, map, 5);
+    clock_t start_tree = clock();
 
-    tree_recursive(root, &hand, map, 2);
+    tree_recursive(root, &hand, map, 3);
     //display the second son of the root
     //display_tree(root, 0);
     //display_level(root);
     //display_level(root->sons[0]);
     //display_level(root->sons[0]->sons[0]);
 
+    //Computation of execution time to find the minimal value among all the leaves in the tree
+    clock_t start_minnode = clock();
+
+    minnode(root);
+
+    clock_t end_minnode = clock();
+    double total_minnode = end_minnode - start_minnode;
+
     t_stack path = createStack(9);
+    //Computation of execution time to compute the path from the root to the min leaf;
+    clock_t start_path = clock();
+
     min_path(root, &path);
+
+    clock_t end_path = clock();
+    double total_path = end_path - start_path;
+
+    clock_t end_tree = clock();
+    double total_tree = end_tree - start_tree;
+
+    // Display of execution times and of MARC's taken path
+
+    printf("\nExecution time to find the minimal value : %lf\n",total_minnode);
+    printf("Execution time to compute the path from the root to the min leaf : %lf\nThe taken path is the following : ",total_path);
     displayStack(path);
-
-    clock_t end = clock();
-    double total = end - start;
-    printf("%lf is the execution time of the tree\n",total);
-
+    printf("Execution time to make the tree : %lf\n",total_tree);
 
     return 0;
 }

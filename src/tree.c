@@ -79,11 +79,12 @@ int min_path(p_node node, t_stack * path){
         printf("%s  | ", getMoveAsString(node->sons[i]->move));
     }
     printf("\n");
+
     return node->sons[min_idx]->value +  min_path(node->sons[min_idx], path);
 }
 
-int minnode(p_node parent){
-
+int minnode(p_node parent)
+{
     int min = parent->sons[0]->value;
     int min_idx = 0 ;
     for (int i = 1 ; i < parent->nbSons ; i++){
