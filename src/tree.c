@@ -99,7 +99,7 @@ void tree_recursive(p_node parent_node, t_stack *moves, t_map map, int max_depth
     // If the depth of the parent node is greater than the maximum depth, we stop the recursion
     // We can put further conditions to stop the recursion
     if (parent_node->depth >= max_depth) {
-        printf("The maximum depth has been reached\n");
+        //printf("The maximum depth has been reached\n");
         return;
     }
 

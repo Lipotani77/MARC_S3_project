@@ -72,11 +72,9 @@ int main() {
 
 
 
-    tree_recursive(root, &hand, map, 5);
+    tree_recursive(root, &hand, map, 2);
     //display the second son of the root
-    for (int i = 0; i < 3; i++){
-        display_level(root->sons[1]->sons[i]);
-    }
+    display_level(root->sons[0]);
 
 
     return 0;
