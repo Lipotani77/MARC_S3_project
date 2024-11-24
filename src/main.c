@@ -71,10 +71,15 @@ int main() {
 
 
 
+    clock_t start = clock();
 
-    tree_recursive(root, &hand, map, 2);
+    tree_recursive(root, &hand, map, 6);
     //display the second son of the root
     display_level(root->sons[0]);
+
+    clock_t end = clock();
+    double total = end - start;
+    printf("%lf is the execution time of the tree\n",total);
 
 
     return 0;

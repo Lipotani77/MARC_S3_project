@@ -22,4 +22,6 @@ add_executable(untitled1 src/main.c
         src/path.c
         include/draw.h
         src/draw.c
+        src/complexity.c
+        include/complexity.h
 )
