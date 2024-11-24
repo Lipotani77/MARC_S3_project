@@ -5,6 +5,14 @@
 #ifndef UNTITLED1_MAP_H
 #define UNTITLED1_MAP_H
 
+// Color codes for terrains
+#define RESET "\033[0m"
+#define GREEN "\033[32m"  // Plain
+#define YELLOW "\033[33m" // Erg
+#define CYAN "\033[36m"   // Reg
+#define RED "\033[31m"    // Crevasse
+#define BLUE "\033[34m"   // Slope
+#define MAGENTA "\033[35m" // MARC's position
 
 #define COST_UNDEF 65535
 /**
@@ -16,7 +24,8 @@ typedef enum e_soil
     PLAIN,
     ERG,
     REG,
-    CREVASSE
+    CREVASSE,
+    SLOPE
 } t_soil;
 
 /**
@@ -55,5 +64,21 @@ t_map createMapFromFile(char *);
  * @param map : the map to display
  */
 void displayMap(t_map);
+
+/**
+ * @brief Display the map with colors for each kind of soil and a red color for MARC's position.
+ * @param map : the map to display
+ * @param locMarc : MARC's position
+ * return the colored map
+ */
+void displayColoredMap(t_map);
+
+
+/**
+ * @brief Display the legend for the map.
+ */
+void displayLegend();
+
+
 
 #endif //UNTITLED1_MAP_H

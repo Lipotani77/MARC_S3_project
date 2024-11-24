@@ -301,3 +301,56 @@ void displayMap(t_map map)
     }
     return;
 }
+
+
+void displayColoredMap(t_map map)
+{
+    char c[4]; // Buffer for terrain symbols (3 chars + null terminator)
+
+    for (int y = 0; y < map.y_max; y++)
+    {
+        for (int x = 0; x < map.x_max; x++)
+        {
+            // Determine the symbol based on terrain type
+            switch (map.soils[y][x])
+            {
+                case BASE_STATION:
+                    strcpy(c, " B ");  // Base Station symbol
+                    printf(RESET "%s" RESET, c);
+                    break;
+                case PLAIN:
+                    strcpy(c, "---");  // Plain terrain symbol
+                    printf(GREEN "%s" RESET, c);
+                    break;
+                case ERG:
+                    strcpy(c, "~~~");  // Erg terrain symbol
+                    printf(YELLOW "%s" RESET, c);
+                    break;
+                case REG:
+                    strcpy(c, "^^^");  // Reg terrain symbol
+                    printf(CYAN "%s" RESET, c);
+                    break;
+                case CREVASSE:
+                    sprintf(c, "%c%c%c", 219, 219, 219); // Crevasse symbol (block characters)
+                    printf(RED "%s" RESET, c);
+                    break;
+                default:
+                    strcpy(c, "???");  // Unknown terrain
+                    printf(RESET "%s" RESET, c);
+                    break;
+            }
+        }
+        printf("\n");
+    }
+}
+
+
+void displayLegend()
+{
+    printf("\nLegend:\n");
+    printf(RESET " B " RESET " = Base Station\n");
+    printf(GREEN "---" RESET " = Plain\n");
+    printf(YELLOW "~~~" RESET " = Erg\n");
+    printf(CYAN "^^^" RESET " = Reg\n");
+    printf(RED "███" RESET " = Crevasse\n");  // Using full block for Crevasse
+}
