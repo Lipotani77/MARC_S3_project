@@ -3,6 +3,8 @@
 //
 #include "../include/draw.h"
 #include <stdlib.h>
+#define SIZE_OF_HAND 7
+
 t_stack draw_hand(){
 
     //creation of the deck. __
@@ -40,11 +42,11 @@ t_stack draw_hand(){
     //we now need to draw 9 random cards.
 
     t_stack hand ;
-    hand = createStack(9);
+    hand = createStack(SIZE_OF_HAND);
     int number ;
     number = rand() %100 ;
 // we iterate 9 times, to draw the 9 cards from the deck
-    for (int j = 0 ; j < 9 ; j++){
+    for (int j = 0 ; j < SIZE_OF_HAND ; j++){
 
 //as long as we find an empty slot of card (card that has been taken), we keep drawing
         while (deck[number] == NONE){
@@ -56,6 +58,6 @@ t_stack draw_hand(){
         deck[number] = NONE ;
 
     }
-    hand.nbElts = 9 ;
+    hand.nbElts = SIZE_OF_HAND ;
     return hand ;
 }
