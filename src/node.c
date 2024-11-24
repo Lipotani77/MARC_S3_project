@@ -16,7 +16,7 @@ t_node *create_node(t_localisation loc, int value, int depth, int nb_sons){
         new_node->sons = NULL;
     }
     new_node->depth = depth;
-    new_node->nbSons = 0;
+    new_node->nbSons = nb_sons;
     return new_node;
 }
 
@@ -63,6 +63,7 @@ t_stack fill_moves_node(t_stack *moves,p_node parent_node, t_map map){
 
         // maybe we have to retrieve the depth but don't know now, so we skip it
         int new_depth = parent_node->depth + 1;
+        printf("The son's new depth is : %d\n",new_depth);
 
         // finally we need to the number of sons
         int nb_sons = MAXI_MOVES - new_depth;
