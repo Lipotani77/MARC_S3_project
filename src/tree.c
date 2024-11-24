@@ -94,7 +94,7 @@ int minnode(p_node parent){
     return min_idx;
 }
 
-/*
+
 void tree_recursive(p_node parent_node, t_stack *moves, t_map map, int max_depth) {
     // If the depth of the parent node is greater than the maximum depth, we stop the recursion
     // We can put further conditions to stop the recursion
@@ -113,9 +113,9 @@ void tree_recursive(p_node parent_node, t_stack *moves, t_map map, int max_depth
         p_node child_node = parent_node->sons[i];
 
         //change the moves stack because we have to remove the move that we used that is the move of the current child node
-        t_stack *moves_stack_copy = remove_current_move_from_stack(moves, child_node->move);
+        t_stack moves_copy = remove_current_move_from_stack(moves, child_node->move); // the stack does not contain the move used to come to this node
 
         // apply the recursion for the current son
-        tree_recursive(child_node, &moves_stack_copy, map, max_depth);
+        tree_recursive(child_node, &moves_copy, map, max_depth);
     }
-}*/
+}

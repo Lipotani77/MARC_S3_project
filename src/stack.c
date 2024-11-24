@@ -104,6 +104,7 @@ t_stack copy_stack(t_stack stack)
     else{
         for (int i = 0; i < stack.size; i++) { // copy the values
             copy.values[i] = stack.values[i];
+            copy.nbElts++;
         }
     }
     return copy;
