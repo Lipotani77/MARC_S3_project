@@ -6,6 +6,7 @@
 #define UNTITLED1_LOC_H
 
 #include "map.h"
+#include "moves.h"
 #include <stdio.h>
 
 /**
@@ -115,5 +116,6 @@ int is_at_base_station(t_position, t_position);
  * @return -1 if the loc is out of the border of the map
  */
 int retrieve_cost(t_localisation localisation, t_map map);
+
 
 #endif //UNTITLED1_LOC_H

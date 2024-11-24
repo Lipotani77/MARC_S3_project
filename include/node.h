@@ -2,7 +2,6 @@
 #define NODE_H
 
 #include <time.h>
-#include "loc.h"
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>

@@ -4,16 +4,14 @@
 #define MAXI_DEPTH 5  // 5 movements possible per phase
 #define MAXI_MOVES 9  // 9 movements available per phase
 
+#include <stdlib.h>
+#include <stdio.h>
 #include "node.h"
 #include "queue.h"
 #include "draw.h"
 #include "loc.h"
 #include "stack.h"
 #include "moves.h"
-#include "../include/tree.h"
-#include <stdlib.h>
-#include <stdio.h>
-#include "../include/moves.h"
 
 /**
  * @brief structure for the N-ary tree

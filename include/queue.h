@@ -4,7 +4,9 @@
 
 #ifndef UNTITLED1_QUEUE_H
 #define UNTITLED1_QUEUE_H
+
 #include "loc.h"
+
 /**
  * @brief Structure for the queue of integers
  */
