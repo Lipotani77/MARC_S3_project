@@ -8,7 +8,7 @@
 #include "../include/loc.h"
 #include "../include/node.h"
 #include "../include/tree.h"
-#include "menu.h"
+#include "../include/menu.h"
 
 
 

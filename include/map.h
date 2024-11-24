@@ -15,6 +15,11 @@
 #define MAGENTA "\033[35m" // MARC's position
 
 #define COST_UNDEF 65535
+
+#include "loc.h"
+#include "moves.h"
+#include <windows.h>
+
 /**
  * @brief Enum for the possible soils of the map
  */
@@ -78,6 +83,12 @@ void displayColoredMap(t_map);
  * @brief Display the legend for the map.
  */
 void displayLegend();
+
+void displayColoredMapWithMarc(t_map, t_position);
+
+void simulateMarcMovements(t_map, t_localisation, t_move*, int);
+
+
 
 
 

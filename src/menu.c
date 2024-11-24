@@ -2,7 +2,7 @@
 // Created by lelia on 24/11/2024.
 //
 
-#include "menu.h"
+#include "../include/menu.h"
 
 
 void displaytable(t_map map)

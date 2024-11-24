@@ -8,7 +8,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <conio.h> // For interactions with keys by user
-#include "../include/map.h"
+#include "map.h"
 
 void displaytable(t_map);
 void displayMenu();
