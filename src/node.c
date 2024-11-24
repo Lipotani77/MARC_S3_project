@@ -23,6 +23,7 @@ t_node *create_node(t_localisation loc, int value, int depth, int nb_sons){
 void display_level(p_node parent_node){
     if (parent_node->sons[0] == NULL){
         printf("This node has no sons node\n");
+        return;
     }
     else{
         printf("The son(s) of the parent node %d are : \n",parent_node->value);
@@ -37,7 +38,6 @@ void display_level(p_node parent_node){
 void add_node_same_depth(p_node parent_node, p_node son_node){
     parent_node->sons[parent_node->nbSons] = son_node;
     parent_node->nbSons++;
-    printf("The current node has now %d sons\n",parent_node->nbSons);
 }
 
 //second draft

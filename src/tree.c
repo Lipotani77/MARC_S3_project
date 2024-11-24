@@ -104,8 +104,7 @@ void tree_recursive(p_node parent_node, t_stack *moves, t_map map, int max_depth
 
     // fill the sons of the parent node given in parameter
     t_stack moves_stack_copy = fill_moves_node(moves, parent_node, map);
-    printf("The number of sons of the parent node %d is : %d\n", parent_node->value, parent_node->nbSons);
-    printf("The sons have been successfully added\n");
+
 
     // apply the recursion for each son of the parent node
     for (int i = 0; i < parent_node->nbSons; i++) {
