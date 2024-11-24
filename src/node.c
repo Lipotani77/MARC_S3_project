@@ -2,13 +2,21 @@
 
 t_node *create_node(t_localisation loc, int value, int depth, int nb_sons){
     p_node new_node = (p_node)malloc(sizeof(t_node));
+    if (new_node == NULL) {
+        fprintf(stderr, "Memory allocation for a new_node failed\n");
+        exit(EXIT_FAILURE);
+    }
     new_node->value = value;
     new_node->loc = loc;
     new_node->move = NONE; // we created an enum for no move
     // initialize the sons of the node to NULL
     if(nb_sons > 0){
         new_node->sons = (t_node **) malloc(nb_sons * sizeof(t_node*));
-        for(int i = 0; i < nb_sons; i++){
+        if (new_node->sons == NULL) {
+            fprintf(stderr, "Memory allocation for sons of a new_node failed\n");
+            exit(EXIT_FAILURE);
+        }
+        for(int i = 0; i < nb_sons; i++){ // initialize the sons to NULL
             new_node->sons[i] = NULL;
         }
     }

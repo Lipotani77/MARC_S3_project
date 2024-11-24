@@ -38,7 +38,8 @@ int main() {
         printf("\n");
     }
     displayColoredMap(map);
-    printf("Map displayed\n\n");
+    printf("\n\n\ndimension of x : %d", map.x_max);
+    printf("\ndimension of y : %d", map.y_max);
     displayLegend();
 
     t_localisation i_loc = loc_init(5,5,NORTH);
@@ -46,19 +47,24 @@ int main() {
 
 
     t_stack hand = draw_hand();
-    printf("Marc have the following possibility : | ");
+    printf("Marc have the following possibility :\n| ");
     for(int i = 0; i < hand.nbElts; i++){
         printf("%s | ", getMoveAsString(hand.values[i]));
     }
     printf("\n");
 
-    t_stack copy_hand = fill_moves_node(&hand,root,map);
+    //create the initial node that will be our root
+
+
+
+    /*t_stack copy_hand = fill_moves_node(&hand,root,map);
     display_level(root);
     printf("The number of sons of the first sons of the root is : %d\n",root->sons[0]->nbSons);
-    displaytable(map);
+    displaytable(map);*/
 
-    printf("\n dimension of x : %d", map.x_max);
-    printf("\n dimension of y : %d", map.y_max);
+
+
+
 
     /*
     tree_recursive(root, &copy_hand, map, 5);
