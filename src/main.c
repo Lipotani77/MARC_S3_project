@@ -53,39 +53,31 @@ int main() {
     printf("\n");
 
 
-
-    t_stack hand_2 = remove_current_move_from_stack(&hand, 7);
-    printf("Marc has now the following possibilities:\n| ");
-    printf("This stack has %d element",hand_2.nbElts);
-
-
-
     //create the initial node that will be our root
     t_localisation i_loc = loc_init(5,5,NORTH);
     p_node root = create_node(i_loc,1,0,9);
 
 
     //fill the tree with the possible moves
-    fill_moves_node(&hand,root,map);
-    display_level(root);
-
-
-    /*t_stack copy_hand = fill_moves_node(&hand,root,map);
-    display_level(root);
-    printf("The number of sons of the first sons of the root is : %d\n",root->sons[0]->nbSons);
-    displaytable(map);*/
-
-
-
-
+    //fill_moves_node(&hand,root,map);
+    //display_level(root);
 
     /*
-    tree_recursive(root, &copy_hand, map, 5);
+    t_stack copy_hand = fill_moves_node(&hand,root,map);
+    display_level(root);
+    printf("The number of sons of the first sons of the root is : %d\n",root->sons[0]->nbSons);*/
+
+    //displaytable(map);
+
+
+
+
+    tree_recursive(root, &hand, map, 5);
     //display the second son of the root
     for (int i = 0; i < 3; i++){
         display_level(root->sons[1]->sons[i]);
     }
-    */
+
 
     return 0;
 }
