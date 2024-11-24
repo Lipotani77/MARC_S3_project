@@ -351,5 +351,7 @@ void displayLegend()
     printf(GREEN "---" RESET " = Plain\n");
     printf(YELLOW "~~~" RESET " = Erg\n");
     printf(CYAN "^^^" RESET " = Reg\n");
-    printf(RED "███" RESET " = Crevasse\n");
+    char crevasseSymbol[4];
+    sprintf(crevasseSymbol, "%c%c%c", 219, 219, 219);
+    printf(RED "%s" RESET " = Crevasse\n", crevasseSymbol);
 }
