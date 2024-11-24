@@ -74,7 +74,11 @@ int min_path(p_node node, t_stack * path){
     int min_idx = minnode(node);
     push(path, node->sons[min_idx]->move);
 
-
+    display_level(node);
+    for (int i = 0 ; i < node->nbSons ; i++) {
+        printf("%s  | ", getMoveAsString(node->sons[i]->move));
+    }
+    printf("\n");
     return node->sons[min_idx]->value +  min_path(node->sons[min_idx], path);
 }
 
@@ -104,9 +108,9 @@ void tree_recursive(p_node parent_node, t_stack *moves, t_map map, int max_depth
     }
 
     // fill the sons of the parent node given in parameter
-    t_stack moves_stack_copy = fill_moves_node(moves, parent_node, map);
+    fill_moves_node(moves, parent_node, map);
 
-
+    //printf("\nici ca marche\n");
     // apply the recursion for each son of the parent node
     for (int i = 0; i < parent_node->nbSons; i++) {
         // retrieve the current son
@@ -116,6 +120,7 @@ void tree_recursive(p_node parent_node, t_stack *moves, t_map map, int max_depth
         t_stack moves_copy = remove_current_move_from_stack(moves, child_node->move); // the stack does not contain the move used to come to this node
 
         // apply the recursion for the current son
+        //printf("entering recursion ");
         tree_recursive(child_node, &moves_copy, map, max_depth);
     }
 }

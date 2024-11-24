@@ -38,7 +38,12 @@ void display_level(p_node parent_node){
         printf("The son(s) of the parent node %d are : \n",parent_node->value);
         printf("[ ");
         for(int i = 0; i < parent_node->nbSons; i++){
-            printf("%d ", parent_node->sons[i]->value);
+            if (parent_node->sons[i] == NULL){
+                printf("NULL ");
+            }
+            else {
+                printf("%d ", parent_node->sons[i]->value);
+            }
         }
         printf("]\n");
     }
@@ -68,17 +73,17 @@ t_stack fill_moves_node(t_stack *moves,p_node parent_node, t_map map){
 
 
         // maybe we have to retrieve the depth but don't know now, so we skip it
-        int new_depth = parent_node->depth + 1;
+
 
 
         // finally we need to the number of sons
-        int nb_sons = MAXI_MOVES - new_depth;
+
 
 
         // now we have all the component to initialize the new node
-        p_node node_to_add = create_node(new_localisation, new_cost, new_depth, nb_sons);
+        p_node node_to_add = create_node(new_localisation, new_cost, parent_node->depth + 1, MAXI_MOVES -(parent_node->depth + 1));
         //printf("The node to add has the following value : %d\n",node_to_add->value);
-
+        node_to_add->move = converted_move ;
 
         // we have initialized the new node to add, so now we add it
         add_node_same_depth(parent_node,node_to_add);
