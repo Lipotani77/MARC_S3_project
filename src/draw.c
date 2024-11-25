@@ -4,6 +4,10 @@
 #include "../include/draw.h"
 #include <stdlib.h>
 
+/**
+ * @brief Function to draw a hand of cards for the robot
+ * @return a stack containing the hand of cards
+ */
 t_stack draw_hand(int nb_cards)
 {
 

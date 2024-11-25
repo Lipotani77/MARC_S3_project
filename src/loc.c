@@ -6,6 +6,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/**
+ * @brief Function to initialise the localisation of the robot
+ * @param x : the x position of the robot
+ * @param y : the y position of the robot
+ * @param ori : the orientation of the robot
+ * @return the localisation of the robot
+ */
 t_localisation loc_init(int x, int y, t_orientation ori)
 {
     t_localisation loc;
@@ -15,11 +22,23 @@ t_localisation loc_init(int x, int y, t_orientation ori)
     return loc;
 }
 
+/**
+ * @brief Function to check a valid position for the robot
+ * @param loc : the localisation of the robot
+ * @param x_max : the maximum x position
+ * @param y_max : the maximum y position
+ * @return 1 if the position is valid, 0 otherwise
+ */
 int isValidLocalisation(t_position loc, int x_max, int y_max)
 {
     return (loc.x >= 0 && loc.x < x_max && loc.y >= 0 && loc.y < y_max);
 }
 
+/**
+ * @brief get the LEFT position of a position
+ * @param pos : the position
+ * @return the LEFT position
+ */
 t_position LEFT(t_position pos)
 {
     t_position new_pos;

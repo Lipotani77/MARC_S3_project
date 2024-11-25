@@ -5,7 +5,11 @@
 #include "../include/complexity.h"
 #include <time.h>
 
-
+/**
+ * @param start // Starting time of the function computed by clock()
+ * @param end // Ending time of the function computed by clock()
+ * @return total_time // the elapsed time of the function
+ */
 double exec_time(struct timeval start, struct timeval end){
     double total_time; // We choose double type to have as much precision as we can.
 
