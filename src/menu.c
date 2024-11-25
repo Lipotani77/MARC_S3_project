@@ -47,15 +47,15 @@ char* chooseMap()
     switch (mapChoice)
     {
         case 1:
-            return "../maps/example1.map";
+            return "..\\maps\\example1.map";
         case 2:
-            return "../maps/example2.map";
+            return "..\\maps\\example2.map";
         case 3:
-            return "../maps/example3.map";
+            return "..\\maps\\example3.map";
         case 4:
-            return "../maps/example4.map";
+            return "..\\maps\\example4.map";
         default:
             printf("Invalid choice. Going to Map 1 by default.\n");
-            return "../maps/example1.map";
+            return "..\\maps\\example1.map";
     }
 }
