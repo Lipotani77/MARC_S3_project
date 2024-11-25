@@ -339,6 +339,14 @@ void displayColoredMap(t_map map)
                     sprintf(c, "%c%c%c", 219, 219, 219);
                     printf(RED "%s" RESET, c);
                     break;
+                case MUD:
+                    strcpy(c, "mmm");
+                    printf(ORANGE "%s" RESET, c);
+                    break;
+                case ICE:
+                    strcpy(c,"|||");
+                    printf(WHITE "%s" RESET, c);
+                    break;
                 default:
                     strcpy(c, "???");
                     printf(RESET "%s" RESET, c);
@@ -357,6 +365,8 @@ void displayLegend()
     printf(GREEN "---" RESET " = Plain\n");
     printf(YELLOW "~~~" RESET " = Erg\n");
     printf(CYAN "^^^" RESET " = Reg\n");
+    printf(WHITE "|||" RESET "= Ice\n");
+    printf(ORANGE "mmm" RESET "= Mud\n");
 
     char crevasseSymbol[4];
     sprintf(crevasseSymbol, "%c%c%c", 219, 219, 219);

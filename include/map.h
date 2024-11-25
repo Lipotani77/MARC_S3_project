@@ -13,6 +13,11 @@
 #define RED "\033[31m"    // Crevasse
 #define BLUE "\033[34m"   // Slope
 #define MAGENTA "\033[35m" // MARC's position
+#define WHITE "\033[37m" // ICE
+#define ORANGE "\033[38;5;214m" // MUD
+
+
+
 
 #define COST_UNDEF 65535
 
@@ -28,9 +33,9 @@ typedef enum e_soil
     ERG,
     REG,
     CREVASSE,
-    SLOPE,
     MUD,
-    ICE
+    ICE,
+    SLOPE
 } t_soil;
 
 /**

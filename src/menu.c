@@ -39,6 +39,8 @@ char* chooseMap()
     printf("\nChoose a map:\n");
     printf("1. Map 1 (example1.map)\n");
     printf("2. Map 2 (example2.map)\n");
+    printf("3. Map 3 (example3.map)\n");
+    printf("4. Map 4 (example4.map)\n");
     printf("Where is MARC in need of your help ? ");
     scanf("%d", &mapChoice);
 
@@ -48,6 +50,10 @@ char* chooseMap()
             return "../maps/example1.map";
         case 2:
             return "../maps/example2.map";
+        case 3:
+            return "../maps/example3.map";
+        case 4:
+            return "../maps/example4.map";
         default:
             printf("Invalid choice. Going to Map 1 by default.\n");
             return "../maps/example1.map";
