@@ -95,7 +95,7 @@ void launch_phase(t_localisation init_pos_marc, t_map map, int nb_cards, int nb_
 
             continue_phase = 0;
         }
-        else if (!on_crevasse(map, init_pos_marc.pos))
+        else if (on_crevasse(map, init_pos_marc.pos))
         {
             printf("Marc fell into a crevasse ! He is lost !\n");
             continue_phase = 0;
