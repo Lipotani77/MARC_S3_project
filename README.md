@@ -32,6 +32,7 @@ Terrain Handling: MARC can navigate different types of terrain, such as:
 - Mud
 - Crevasse
 - Ice
+
 Dynamic Pathfinding: MARC adjusts its path based on terrain constraints.
 
 ## Authors
