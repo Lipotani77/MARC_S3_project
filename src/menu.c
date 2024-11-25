@@ -29,7 +29,7 @@ void displayIntroduction()
     printf("MARC, which was carrying out its mission very well, has suffered a malfunction.\n");
     printf("Its programming, guidance, and movement systems have been seriously affected...\n");
     printf("You have to help him!\n");
-    printf("\nPress any key to continue...\n");
+    printf("\nPress Enter to continue...\n");
     getch(); // User input
 }
 

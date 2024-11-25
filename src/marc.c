@@ -1,5 +1,6 @@
 #include "../include/marc.h"
 
+
 void displayColoredMapWithMarc(t_map map, t_position marc_position)
 {
     char c[4];
@@ -67,7 +68,12 @@ int simulateMarcMovements(t_map map, t_localisation * marc_pos, t_move moves[], 
         if (marc_loc->pos.x < 0 || marc_loc->pos.x >= map.x_max ||
             marc_loc->pos.y < 0 || marc_loc->pos.y >= map.y_max) {
             printf("MARC moved out of bounds. Stopping simulation.\n");
-            return -10000;
+            return -1;
+        }
+
+        if (map.soils[marc_loc->pos.y][marc_loc->pos.x] == 4){
+            printf("MARC fell into a crevasse. Stopping simulation. \n");
+            return -2;
         }
     }
 

@@ -63,24 +63,31 @@ int top(t_stack stack)
     return stack.values[stack.nbElts - 1];
 }
 
+// remove a given integer value given as parameter from the stack, and modify the stack directly to remove it
 void removevalfromstack(t_stack *stack, int value){
     t_stack temp ;
     temp = createStack(10);
     int found = 0 ;
     int tempval ;
-    int counter =0 ;
+    // the counter allows to know efficently how many elements we had to remove, and thus refill the stack afterwise
+    // in an easy and efficient way, avoiding segmentation faults due to poping an empty stack
+    int counter = 0 ;
     while (found == 0){
 
         tempval = pop(stack);
+        //if the value is found, we do not store it, we just pass and stop the loop
         if (tempval == value){
             found = 1;
         }
+        // if the value hasn't been found, we store the removed value in order to put it back afterwise
         else{
             push(&temp, tempval);
+            counter++;
         }
-        counter++;
-    }
 
+
+    }
+    // after finding the value, we refill all the values
     while (counter >1){
         push(stack, pop(&temp));
         counter --;
@@ -93,6 +100,7 @@ int is_stack_empty(t_stack* stack)
     return (stack->nbElts == 0);
 }
 
+//function to copy a given stack, and return a new one
 t_stack copy_stack(t_stack stack)
 {
     t_stack copy = createStack(stack.size); // create an empty stack with the same size
