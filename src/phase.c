@@ -6,8 +6,9 @@
 
 t_localisation phase(t_localisation init_pos_marc, t_map map, int nb_cards, int nb_moves, int *total_cost)
 {
+    int initial_cost = retrieve_cost(init_pos_marc, map); // retrieve the cost of the initial position of Marc
     //create the initial node that will be our root
-    p_node root = create_node(init_pos_marc,1,0,9);
+    p_node root = create_node(init_pos_marc,initial_cost,0,9);
 
     //Display the map with the initial position of Marc
     displayColoredMapWithMarc(map,init_pos_marc.pos);
