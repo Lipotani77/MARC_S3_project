@@ -13,6 +13,7 @@ To know :
 - Too ensure the expected output in the console, check your Cion configurations for the following:
 Navigate to Run -> Edit Configurations, and activate Emulate terminal in the output console.
 
+
 Now, you can run the program. Then, a menu will appear:
 
 Start Mission: **Press 1** to begin.
