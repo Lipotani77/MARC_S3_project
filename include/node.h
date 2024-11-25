@@ -1,57 +1,83 @@
 #ifndef  NODE_H
 #define NODE_H
-#define ACTION_SIZE 9
+
 #include <time.h>
-#include "loc.h"
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include "loc.h"
+#include "moves.h"
+#include "stack.h"
+
+#define MAXI_DEPTH 5  // 5 movements possible per phase
+#define MAXI_MOVES 9  // 9 movements available per phase
 
 /**
- * @brief Structure of a node
-
+ * @brief structure for the node of the N-ary tree
+ * @param value : the node's value => the square's cost
+ * @param loc : coordinates and orientation on the map
+ * @param move : last move made to the node
+ * @param depth : the node's depth within the tree => at which number of moves over MAXI_DEPTH
+ * @param sons : the node's sons => next moves from the current node
+ * @param nbSons : the number of node's sons => the number of remaining moves
+ * @return the new node
  */
+
 typedef struct s_node
 {
-    /**
-    int value; // the cost of the node
-    int map_pos[2]; // x, y
-    int xn,yn;
-    struct s_node *sons[ACTION_SIZE];
+    int value;
+    t_localisation loc;
+    t_move move;
+    struct s_node **sons;
+    int depth;
     int nbSons;
-    int LS; // 5 - the depth of the node
-    */
-    int cost; // the cost of the node
-    int x; // x position of the node in the map so the position of the robot if it goes to this node
-    int y; // y position of the node in the map so the position of the robot if it goes to this node
-    t_orientation orientation; // orientation of the robot
-    char move[20]; // the move that led to this node
-    struct s_node *sons[ACTION_SIZE]; // the sons of the node
-    int depth; // the depth of the node, to be initialized to 0, and should not exceed 5 or 4 as a phase has 5 or 4 moves
-    int nb_children; // the number of children of the node, we will decrement it each time we are going more in depth it should be initialized to 9
+    int nbSonsMax;
 } t_node, *p_node;
 
 /**
- * @brief Function to create a node
- * @param cost : the cost of the node
- * @param x : the x position of the node
- * @param y : the y position of the node
- * @param orientation : the orientation of the rover
- * @param move : the move that have been achieved to arrive to this node
- * @return a pointer to the node
+ * @brief structure for the node of the N-ary tree
+ * @param loc : coordinates and orientation on the map
+ * @param value : the node's value => the square's cost
+ * @param depth : the node's depth within the tree => at which number of moves over MAXI_DEPTH
+ * @param nb_sons : the maximum number of sons the node can have
+ * @return the new node
  */
-p_node create_node(int, int, int, t_orientation, char *);
+t_node *create_node(t_localisation loc, int value, int depth, int nb_sons);
 
-void add_node(); //to be defined
+/**
+ * @brief Function to add a node to the tree
+ * @param node : the node to add
+ * @param father : the father of the node
+ * @return void
+ */
+void add_node(p_node, p_node); //to be defined
+
+/**
+ * @brief Function to add a node to the tree
+ * @param parent_node : the father of the node
+ * @param son_node : the node to add
+ * @return void
+ */
+void add_node_same_depth(p_node parent_node, p_node son_node);
 
 
 
 /**
- * @brief Function to find the cost at given coordinates
- * @param x : the i index of the cost which is also the x position
- * @param y : the j index of the cost which is also the y position
- * @param map : the map with the cost we need
- * @return cost : the cost of the position we are
+ * @brief Function to display the sons of a node
+ * @param parent_node : the node to display the sons
+ * @return nothing
  */
-int cost_node(int x, int y, t_map map);
+void display_level(p_node);
+
+/**
+ * @brief Function to fill the sons of a node
+ * @param moves : the stack of moves
+ * @param parent_node : the parent node
+ * @param map : the map
+ * @return the stack of moves
+ */
+t_stack fill_moves_node(t_stack *moves,p_node parent_node, t_map map);
+
+void display_info_node(p_node node);
+
 #endif //NODE_H

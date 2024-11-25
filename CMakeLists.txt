@@ -18,8 +18,12 @@ add_executable(untitled1 src/main.c
         include/node.h
         src/tree.c
         include/tree.h
+        include/draw.h
+        src/draw.c
         src/complexity.c
         include/complexity.h
-
-
+        src/menu.c
+        include/menu.h
+        src/marc.c
+        include/marc.h
 )

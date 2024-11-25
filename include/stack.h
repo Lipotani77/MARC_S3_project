@@ -4,6 +4,8 @@
 
 #ifndef UNTITLED1_STACK_H
 #define UNTITLED1_STACK_H
+#include "moves.h"
+
 
 /**
  * @brief Structure for the stack of integers
@@ -43,6 +45,16 @@ int pop(t_stack *);
  * @return the top value
  */
 int top(t_stack);
+
+void removevalfromstack(t_stack *stack, int value);
+int is_stack_empty(t_stack*);
+t_stack copy_stack(t_stack);
+void free_stack(t_stack);
+
+t_stack remove_current_move_from_stack(t_stack *stack, t_move move);
+void displayStack(t_stack);
+
+
 
 
 #endif //UNTITLED1_STACK_H

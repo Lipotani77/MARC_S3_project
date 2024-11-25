@@ -301,3 +301,60 @@ void displayMap(t_map map)
     }
     return;
 }
+
+
+void displayColoredMap(t_map map)
+{
+    char c[4];
+
+    for (int y = 0; y < map.y_max; y++)
+    {
+        for (int x = 0; x < map.x_max; x++)
+        {
+            switch (map.soils[y][x])
+            {
+                case BASE_STATION:
+                    strcpy(c, " B ");
+                    printf(RESET "%s" RESET, c);
+                    break;
+                case PLAIN:
+                    strcpy(c, "---");
+                    printf(GREEN "%s" RESET, c);
+                    break;
+                case ERG:
+                    strcpy(c, "~~~");
+                    printf(YELLOW "%s" RESET, c);
+                    break;
+                case REG:
+                    strcpy(c, "^^^");
+                    printf(CYAN "%s" RESET, c);
+                    break;
+                case CREVASSE:
+                    sprintf(c, "%c%c%c", 219, 219, 219);
+                    printf(RED "%s" RESET, c);
+                    break;
+                default:
+                    strcpy(c, "???");
+                    printf(RESET "%s" RESET, c);
+                    break;
+            }
+        }
+        printf("\n");
+    }
+}
+
+
+void displayLegend()
+{
+    printf("\nLegend:\n");
+    printf(RESET " B " RESET " = Base Station\n");
+    printf(GREEN "---" RESET " = Plain\n");
+    printf(YELLOW "~~~" RESET " = Erg\n");
+    printf(CYAN "^^^" RESET " = Reg\n");
+
+    char crevasseSymbol[4];
+    sprintf(crevasseSymbol, "%c%c%c", 219, 219, 219);
+    printf(RED "%s" RESET " = Crevasse\n", crevasseSymbol);
+}
+
+

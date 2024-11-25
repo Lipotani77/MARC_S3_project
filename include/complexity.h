@@ -1,9 +1,11 @@
+//
+// Created by lelia on 24/11/2024.
+//
+
 #ifndef UNTITLED1_COMPLEXITY_H
 #define UNTITLED1_COMPLEXITY_H
 
 #include <time.h>
-//#include ""
-
 
 /*
  * The goal is to create a function that will take in parameter a starting time and an ending time and compute the time execution based on these two values.
@@ -17,5 +19,6 @@
  * @return total_time // the elapsed time of the function
  */
 double exec_time(clock_t start, clock_t end);
+
 
 #endif //UNTITLED1_COMPLEXITY_H

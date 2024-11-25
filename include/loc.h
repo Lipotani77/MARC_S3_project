@@ -108,4 +108,13 @@ t_position findBaseCoordinate(t_map);
  */
 int is_at_base_station(t_position, t_position);
 
+/**
+ * @brief retrieve the cost associated to a coordinate
+ * @param localisation the localisation for which we want its cost
+ * @param map the map
+ * @return -1 if the loc is out of the border of the map
+ */
+int retrieve_cost(t_localisation localisation, t_map map);
+
+
 #endif //UNTITLED1_LOC_H

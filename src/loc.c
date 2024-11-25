@@ -86,3 +86,15 @@ int is_at_base_station(t_position base_pos, t_position MARC_pos){
         return 0;
     }
 }
+
+int retrieve_cost(t_localisation localisation, t_map map){
+    if (localisation.pos.x < 0 || localisation.pos.x >= map.x_max ||
+        localisation.pos.y < 0 || localisation.pos.y >= map.y_max) {
+        //printf("The position is out of the map\n");
+        return -1;
+    }
+    else{
+        return map.costs[localisation.pos.y][localisation.pos.x];
+    }
+}
+
