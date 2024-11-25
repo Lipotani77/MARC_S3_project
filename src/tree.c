@@ -102,7 +102,7 @@ void tree_recursive(p_node parent_node, t_stack *moves, t_map map, int max_depth
         return;
     }
 
-    // fill the sons of the parent node given in parameter
+    // fill the sons with the parent node given in parameter
     t_stack moves_stack_copy = fill_moves_node(moves, parent_node, map);
 
 

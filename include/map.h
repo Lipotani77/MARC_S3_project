@@ -16,9 +16,7 @@
 
 #define COST_UNDEF 65535
 
-#include "loc.h"
-#include "moves.h"
-#include <windows.h>
+
 
 /**
  * @brief Enum for the possible soils of the map
