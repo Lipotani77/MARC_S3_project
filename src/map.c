@@ -317,7 +317,9 @@ void displayColoredMap(t_map map)
     {
         for (int x = 0; x < map.x_max; x++)
         {
-            switch (map.soils[y][x])
+            t_soil current_soil;
+            current_soil = map.soils[y][x];
+            switch (current_soil)
             {
                 case BASE_STATION:
                     strcpy(c, " B ");
