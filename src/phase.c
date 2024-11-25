@@ -41,6 +41,7 @@ t_localisation phase(t_localisation init_pos_marc, t_map map, int nb_cards, int 
     mingw_gettimeofday(&start_minnode, NULL);
     //Computation of the minimal value among all the leaves in the tree
     minnode(root);
+    Sleep(1000);
     mingw_gettimeofday(&end_minnode, NULL);
     double total_minnode = exec_time(start_minnode, end_minnode);
 
@@ -54,8 +55,11 @@ t_localisation phase(t_localisation init_pos_marc, t_map map, int nb_cards, int 
     mingw_gettimeofday(&start_path, NULL);
     //Computation of the path from the root to the min leaf
     *total_cost = *total_cost + min_path(root, &path);
+    Sleep(1000);
     mingw_gettimeofday(&end_path, NULL);
     double total_path = exec_time(start_path, end_path);;
+
+
 
 
 
@@ -73,6 +77,8 @@ t_localisation phase(t_localisation init_pos_marc, t_map map, int nb_cards, int 
         {
         move[i] = pop(&path);
     }
+
+    simulateMarcMovements(map, &init_pos_marc, move, nb_moves) ;
 
     t_localisation new_loc_marc = loc_init(init_pos_marc.pos.x, init_pos_marc.pos.y, init_pos_marc.ori);
 
