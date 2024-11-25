@@ -102,7 +102,12 @@ void launch_phase(t_localisation init_pos_marc, t_map map, int nb_cards, int nb_
         }
         else
         {
-            init_pos_marc = phase(init_pos_marc, map, nb_cards, nb_moves, total_cost);
+            if (map.soils[init_pos_marc.pos.y][init_pos_marc.pos.x] == REG){
+                init_pos_marc = phase(init_pos_marc, map, nb_cards, nb_moves-1, total_cost);
+            }
+            else {
+                init_pos_marc = phase(init_pos_marc, map, nb_cards, nb_moves, total_cost);
+            }
             printf("The total cost used by Marc at the end of this phase is %d\n", *total_cost);
 
         }

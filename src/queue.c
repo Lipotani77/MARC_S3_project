@@ -11,6 +11,7 @@
  * @param size : the size of the queue
  * @return the queue
  */
+
 t_queue createQueue(int size)
 {
     // the size of the queue must be positive

@@ -206,7 +206,7 @@ void move_in_soil(t_localisation* p_loc, t_map map, t_move move_to){
     current_soil = map.soils[loc_y][loc_x];
 
     switch(current_soil){
-        case REG :
+        case ERG :
             switch (move_to) {
                 case F_20:
                     move_to = F_10;
