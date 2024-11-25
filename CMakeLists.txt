@@ -24,4 +24,6 @@ add_executable(untitled1 src/main.c
         include/complexity.h
         src/menu.c
         include/menu.h
+        src/marc.c
+        include/marc.h
 )

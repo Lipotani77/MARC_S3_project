@@ -6,7 +6,6 @@
 #define UNTITLED1_LOC_H
 
 #include "map.h"
-#include "moves.h"
 #include <stdio.h>
 
 /**
