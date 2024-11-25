@@ -8,7 +8,11 @@ The aim of this project is to use the tools and techniques learned during the se
 
 
 ## Usage<a name="usage"></a>
-When you run the programm, a menu will appear:
+
+First, in order to have the expected output in the console, you need to check in your Cion configurations if you have the following :
+In Run -> Edit configurations -> activate the Emulate terminal in the output console.
+
+Then, you can run the programm. A menu will appear:
 1. **Start Mission** : Press **1** to begin.
 2. **Exit** : Press **2** to quit the program
 

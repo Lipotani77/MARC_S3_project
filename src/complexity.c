@@ -6,13 +6,13 @@
 #include <time.h>
 
 
-double exec_time(clock_t start, clock_t end){
+double exec_time(struct timeval start, struct timeval end){
     double total_time; // We choose double type to have as much precision as we can.
 
     /* since clock_t  a long  integer type, we cast the values in double to not loose precision by performing the computations
     * We divide by CLOCkS_PER_SEC because clock() give us the CPU time consumed by the function (the number of ticks it took). By doing this, get the time in second.
     */
-    total_time = ((double)(end - start))/CLOCKS_PER_SEC;
+    total_time = (double)(end.tv_sec - start.tv_sec) + (double)(end.tv_usec - start.tv_usec) / 1e6;
     return total_time;
 }
 

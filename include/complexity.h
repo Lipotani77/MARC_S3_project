@@ -18,7 +18,7 @@
  * @param end // Ending time of the function computed by clock()
  * @return total_time // the elapsed time of the function
  */
-double exec_time(clock_t start, clock_t end);
+double exec_time(struct timeval start, struct timeval end);
 
 
 #endif //UNTITLED1_COMPLEXITY_H
