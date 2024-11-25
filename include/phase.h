@@ -18,7 +18,7 @@
  @param :
  */
 
-t_localisation phase(t_localisation, t_map, int, int);
+t_localisation phase(t_localisation init_pos_marc, t_map map, int nb_cards, int nb_moves, int *total_cost);
 
 void launch_phase(t_localisation, t_map, int, int, int*);
 

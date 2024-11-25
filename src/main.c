@@ -71,9 +71,8 @@ int main()
     scanf("%d", &nb_cards);
     printf("Enter the number of moves to simulate: ");
     scanf("%d", &nb_moves);
-
-    launch_phase(loc_init(5, 5, NORTH), map, nb_cards, nb_moves, 0);
-
-
+    int* total_cost;
+    *total_cost = 0;
+    launch_phase(loc_init(5, 5, NORTH), map, nb_cards, nb_moves, total_cost);
     return 0;
 }
