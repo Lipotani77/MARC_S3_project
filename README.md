@@ -34,7 +34,7 @@ Once the map is selected, you can observe MARC navigating to find the base stati
    5. Ice
 2. **Dynamic Pathfinding** : MARC adjusts is path based on terrain constraints.
 
- 
+
 
 ## Authors
 Killian KOULOURATH, Lélia GHEZALI, Noah JEANDEAU, Idrissa BARRY
