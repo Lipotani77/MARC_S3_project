@@ -23,6 +23,6 @@ void displayColoredMapWithMarc(t_map, t_position);
 /**
 * @brief Function to simulate the movements of MARC
 */
-void simulateMarcMovements(t_map, t_localisation, t_move*, int);
+int simulateMarcMovements(t_map map, t_localisation * marc_pos, t_move moves[], int move_count);
 
 #endif //MARC_H

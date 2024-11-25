@@ -11,6 +11,9 @@
 #include "../include/tree.h"
 #include "../include/marc.h"
 
+
+
+
 int main() {
     int choice;
     t_map map;
@@ -124,6 +127,14 @@ int main() {
     printf("Execution time to compute the path from the root to the min leaf : %lf\nThe taken path is the following : ",total_path);
     displayStack(path);
     printf("Execution time to make the tree : %lf\n",total_tree);
+
+    t_move move[3];
+    for (int i = 0 ; i < 3 ; i++){
+        move[i] = pop(&path);
+    }
+
+    printf("\nprice of the path : %d \n", simulateMarcMovements(map, &i_loc, move, 3));
+    printf("coordinates : \n x: %d  y: %d  \norientation : %d", i_loc.pos.x, i_loc.pos.y, i_loc.ori) ;
 
     return 0;
 }

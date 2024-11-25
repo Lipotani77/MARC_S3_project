@@ -43,15 +43,17 @@ void displayColoredMapWithMarc(t_map map, t_position marc_position)
     }
 }
 
-void simulateMarcMovements(t_map map, t_localisation start, t_move moves[], int move_count)
+int simulateMarcMovements(t_map map, t_localisation * marc_pos, t_move moves[], int move_count)
 {
-    t_localisation marc_loc = start;
+    t_localisation * marc_loc = marc_pos;
+
+    int cost = 0 ;
 
     for (int i = 0; i < move_count; i++) {
         // Clear screen for the animation
         system("cls");
 
-        displayColoredMapWithMarc(map, marc_loc.pos);
+        displayColoredMapWithMarc(map, marc_loc->pos);
 
         // Display of current move
         printf("\nPerforming move %d/%d: %s\n", i + 1, move_count, getMoveAsString(moves[i]));
@@ -59,17 +61,18 @@ void simulateMarcMovements(t_map map, t_localisation start, t_move moves[], int 
         // Wait 1s to see the animation
         Sleep(1000);
 
-        updateLocalisation(&marc_loc, moves[i]);
+        updateLocalisation(marc_loc, moves[i]);
+        cost += map.costs[marc_loc->pos.y][marc_loc->pos.x];
 
-        if (marc_loc.pos.x < 0 || marc_loc.pos.x >= map.x_max ||
-            marc_loc.pos.y < 0 || marc_loc.pos.y >= map.y_max) {
+        if (marc_loc->pos.x < 0 || marc_loc->pos.x >= map.x_max ||
+            marc_loc->pos.y < 0 || marc_loc->pos.y >= map.y_max) {
             printf("MARC moved out of bounds. Stopping simulation.\n");
-            return;
+            return -10000;
         }
     }
 
     // Final display after all moves
     system("cls");
-    displayColoredMapWithMarc(map, marc_loc.pos);
-    printf("Simulation complete. MARC stopped at (%d, %d), facing %d.\n",marc_loc.pos.x, marc_loc.pos.y, marc_loc.ori);
+    displayColoredMapWithMarc(map, marc_loc->pos);
+    printf("Simulation complete. MARC stopped at (%d, %d), facing %d.\n",marc_loc->pos.x, marc_loc->pos.y, marc_loc->ori);
 }
