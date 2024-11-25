@@ -80,5 +80,6 @@ int simulateMarcMovements(t_map map, t_localisation * marc_pos, t_move moves[], 
     // Final display after all moves
     system("cls");
     displayColoredMapWithMarc(map, marc_loc->pos);
-    printf("Simulation complete. MARC stopped at (%d, %d), facing %d.\n",marc_loc->pos.x, marc_loc->pos.y, marc_loc->ori);
+    printf("Simulation complete. MARC stopped at (%d, %d), facing %s.\n",marc_loc->pos.x, marc_loc->pos.y,
+           getOrientationAsString(marc_loc->ori));
 }

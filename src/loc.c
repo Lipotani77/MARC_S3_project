@@ -3,6 +3,8 @@
 //
 
 #include "../include/loc.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 t_localisation loc_init(int x, int y, t_orientation ori)
 {
@@ -106,3 +108,17 @@ int on_crevasse(t_map map, t_position pos){
     return is_marc_dead;
 }
 
+const char* getOrientationAsString(int ori) {
+    switch (ori) {
+        case 0:
+            return "NORTH";
+        case 1:
+            return "EAST";
+        case 2:
+            return "SOUTH";
+        case 3:
+            return "WEST";
+        default:
+            return "UNKNOWN";
+    }
+}

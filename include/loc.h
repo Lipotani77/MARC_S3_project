@@ -124,4 +124,7 @@ int retrieve_cost(t_localisation localisation, t_map map);
  */
 int on_crevasse(t_map map, t_position pos);
 
+const char* getOrientationAsString(int ori) ;
+
+
 #endif //UNTITLED1_LOC_H
