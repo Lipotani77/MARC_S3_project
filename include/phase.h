@@ -18,8 +18,9 @@
  @param :
  */
 
-t_localisation phases(t_localisation, t_map, int, int);
+t_localisation phase(t_localisation, t_map, int, int);
 
+void launch_phase(t_localisation, t_map, int, int, int*);
 
 
 

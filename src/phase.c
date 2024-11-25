@@ -4,7 +4,7 @@
 #include <string.h>
 #include "../include/phase.h"
 
-t_localisation phases(t_localisation init_pos_marc, t_map map, int nb_cards, int nb_moves)
+t_localisation phase(t_localisation init_pos_marc, t_map map, int nb_cards, int nb_moves, int *total_cost)
 {
     //create the initial node that will be our root
     p_node root = create_node(init_pos_marc,1,0,9);
@@ -45,7 +45,7 @@ t_localisation phases(t_localisation init_pos_marc, t_map map, int nb_cards, int
     clock_t start_path = clock();
 
     //Computation of the path from the root to the min leaf
-    min_path(root, &path);
+    *total_cost = *total_cost + min_path(root, &path);
 
     clock_t end_path = clock();
     double total_path = end_path - start_path;
@@ -74,4 +74,37 @@ t_localisation phases(t_localisation init_pos_marc, t_map map, int nb_cards, int
     printf("coordinates : \n x: %d  y: %d  \norientation : %d", new_loc_marc.pos.x, new_loc_marc.pos.y, new_loc_marc.ori);
 
     return new_loc_marc;
+}
+
+void launch_phase(t_localisation init_pos_marc, t_map map, int nb_cards, int nb_moves, int* total_cost)
+{
+    t_position base_pos = findBaseCoordinate(map);
+    int continue_phase = 1;
+    while (continue_phase == 1)
+    {
+        if (is_at_base_station(base_pos, init_pos_marc.pos))
+        {
+            printf("Let's go ! Marc have been saved ! He is not alone anymore !\n");
+            printf("The total cost used by Marc to arrive at the base is %d\n", *total_cost);
+            continue_phase = 0;
+        }
+        else if (!isValidLocalisation(init_pos_marc.pos, map.x_max, map.y_max))
+        {
+            printf("Marc is out of the map ! He is lost !\n");
+            printf("The total cost used by Marc before we lost contact with him is %d\n", *total_cost);
+
+            continue_phase = 0;
+        }
+        else if (!on_crevasse(map, init_pos_marc.pos))
+        {
+            printf("Marc fell into a crevasse ! He is lost !\n");
+            continue_phase = 0;
+        }
+        else
+        {
+            init_pos_marc = phase(init_pos_marc, map, nb_cards, nb_moves, total_cost);
+            printf("The total cost used by Marc at the end of this phase is %d\n", *total_cost);
+
+        }
+    }
 }

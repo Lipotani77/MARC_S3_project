@@ -98,3 +98,11 @@ int retrieve_cost(t_localisation localisation, t_map map){
     }
 }
 
+int on_crevasse(t_map map, t_position pos){
+    int is_marc_dead = 0;
+    if((map.soils[pos.y][pos.x])==CREVASSE){
+        is_marc_dead =1;
+    }
+    return is_marc_dead;
+}
+

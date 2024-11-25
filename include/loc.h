@@ -116,5 +116,12 @@ int is_at_base_station(t_position, t_position);
  */
 int retrieve_cost(t_localisation localisation, t_map map);
 
+/**
+ * 
+ * @param map 
+ * @param pos 
+ * @return 
+ */
+int on_crevasse(t_map map, t_position pos);
 
 #endif //UNTITLED1_LOC_H
