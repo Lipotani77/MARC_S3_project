@@ -11,10 +11,12 @@
 #include "../include/tree.h"
 #include "../include/marc.h"
 
+//    t_localisation i_loc = loc_init(5, 5, NORTH);  // Starting position of MARC
 
 
 
-int main() {
+int main()
+{
     int choice;
     t_map map;
 
@@ -60,81 +62,6 @@ int main() {
         printf("\n");
     }
 
-    t_localisation i_loc = loc_init(5, 5, NORTH);  // Starting position of MARC
-    displayColoredMapWithMarc(map,i_loc.pos);
-    displayLegend();
-
-
-
-    //draw the hand of possible choices for Marc for the first phase
-    t_stack hand = draw_hand();
-    printf("Marc has the following possibility :\n| ");
-    for(int i = 0; i < hand.nbElts; i++){
-        printf("%s | ", getMoveAsString(hand.values[i]));
-    }
-    printf("\n");
-
-
-    //create the initial node that will be our root
-    p_node root = create_node(i_loc,1,0,9);
-
-
-    //fill the tree with the possible moves
-    //fill_moves_node(&hand,root,map);
-    //display_level(root);
-
-    //*/
-    //t_stack copy_hand = fill_moves_node(&hand,root,map);
-
-    //printf("The number of sons of the first sons of the root is : %d\n",root->sons[0]->nbSons);
-    //
-    //displaytable(map);
-
-
-
-    clock_t start_tree = clock();
-
-    tree_recursive(root, &hand, map, 3);
-    //display the second son of the root
-    //display_tree(root, 0);
-    //display_level(root);
-    //display_level(root->sons[0]);
-    //display_level(root->sons[0]->sons[0]);
-
-    //Computation of execution time to find the minimal value among all the leaves in the tree
-    clock_t start_minnode = clock();
-
-    minnode(root);
-
-    clock_t end_minnode = clock();
-    double total_minnode = end_minnode - start_minnode;
-
-    t_stack path = createStack(9);
-    //Computation of execution time to compute the path from the root to the min leaf;
-    clock_t start_path = clock();
-
-    min_path(root, &path);
-
-    clock_t end_path = clock();
-    double total_path = end_path - start_path;
-
-    clock_t end_tree = clock();
-    double total_tree = end_tree - start_tree;
-
-    // Display of execution times and of MARC's taken path
-
-    printf("\nExecution time to find the minimal value : %lf\n",total_minnode);
-    printf("Execution time to compute the path from the root to the min leaf : %lf\nThe taken path is the following : ",total_path);
-    displayStack(path);
-    printf("Execution time to make the tree : %lf\n",total_tree);
-
-    t_move move[3];
-    for (int i = 0 ; i < 3 ; i++){
-        move[i] = pop(&path);
-    }
-
-    printf("\nprice of the path : %d \n", simulateMarcMovements(map, &i_loc, move, 3));
-    printf("coordinates : \n x: %d  y: %d  \norientation : %d", i_loc.pos.x, i_loc.pos.y, i_loc.ori) ;
 
     return 0;
 }

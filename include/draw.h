@@ -8,6 +8,6 @@
 #include "stack.h"
 
 
-t_stack draw_hand();
+t_stack draw_hand(int);
 
 #endif //UNTITLED1_DRAW_H
