@@ -86,3 +86,12 @@ int is_at_base_station(t_position base_pos, t_position MARC_pos){
         return 0;
     }
 }
+
+int on_crevasse(t_map map, t_position pos){
+    int is_marc_dead = 0;
+    if((map.soils[pos.y][pos.x])==CREVASSE){
+        is_marc_dead =1;
+    }
+    return is_marc_dead;
+}
+

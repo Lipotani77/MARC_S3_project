@@ -107,5 +107,6 @@ t_position findBaseCoordinate(t_map);
  * @return a bool, 1 if MARC is at the base, 0 otherwise
  */
 int is_at_base_station(t_position, t_position);
+int on_crevasse(t_map map, t_position pos);
 
 #endif //UNTITLED1_LOC_H
