@@ -229,7 +229,7 @@ t_map createMapFromFile(char *filename)
     for (int i = 0; i < ydim; i++)
     {
 
-        // parse the line to get the values : 0 = BASE_STATION, 1 = PLAIN, 2 = ERG, 3 = REG, 4 = CREVASSE
+        // parse the line to get the values : 0 = BASE_STATION, 1 = PLAIN, 2 = ERG, 3 = REG, 4 = CREVASSE, 5 = MUD
         // values are separated by spaces, so we use sscanf with %d to get the values
         for (int j = 0; j < xdim; j++)
         {
@@ -256,7 +256,7 @@ void displayMap(t_map map)
 {
     /** the rules for display are :
      * display all soils with 3x3 characters
-     * characters are : B for base station, '-' for plain, '~' for erg, '^' for reg, ' ' for crevasse
+     * characters are : B for base station, '-' for plain, '~' for erg, '^' for reg, ' ' for crevasse, 'm' for mud
      */
     for (int i = 0; i < map.y_max; i++)
     {
@@ -288,6 +288,12 @@ void displayMap(t_map map)
                         break;
                     case CREVASSE:
                         sprintf(c, "%c%c%c",219,219,219);
+                        break;
+                    case MUD:
+                        strcpy(c, "mmm");
+                        break;
+                    case ICE:
+                        strcpy(c,"|||");
                         break;
                     default:
                         strcpy(c, "???");

@@ -28,13 +28,15 @@ typedef enum e_soil
     ERG,
     REG,
     CREVASSE,
-    SLOPE
+    SLOPE,
+    MUD,
+    ICE
 } t_soil;
 
 /**
  * @brief Array of costs for the soils
  */
-static const int _soil_cost[5] = {0, 1, 2, 4, 10000};
+static const int _soil_cost[7] = {0, 1, 2, 4, 10000, 5, 6};
 
 /**
  * @brief Structure for the map
