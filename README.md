@@ -7,10 +7,6 @@ In 2028, a solar storm hit MARC (MArs Rover Cartograph) rover. Its programming, 
 The aim of this project is to use the tools and techniques learned during the semester to program MARC to navigate autonomously and safely retun to the base station.
 
 
-
-
-tables des matières 
-
 ## Usage<a name="usage"></a>
 When you run the programm, a menu will appear:
 1. **Start Mission** : Press **1** to begin.
