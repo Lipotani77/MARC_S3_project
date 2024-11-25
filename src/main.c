@@ -31,12 +31,12 @@ int main() {
     printf("Map displayed\n");
 
     t_localisation loc;
-    loc.pos.x = 1;
+    loc.pos.x = 3;
     loc.pos.y = 6;
-    loc.ori = EAST;
+    loc.ori = NORTH;
 
-    move_in_soil(&loc, map, F_10);
-    printf("New position = %d %d", loc.pos.x, loc.pos.y);
+    move_in_soil(&loc, map, F_20);
+    printf("\n New position = %d %d", loc.pos.x, loc.pos.y);
 
 
 

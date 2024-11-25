@@ -189,6 +189,7 @@ void move_in_soil(t_localisation* p_loc, t_map map, t_move move_to){
                     break;
                 case U_TURN:
                     move_to = T_RIGHT;
+                    p_loc->ori = rotate(p_loc->ori, move_to);
                     break;
                 default:
                     move_to = REST;
@@ -198,6 +199,7 @@ void move_in_soil(t_localisation* p_loc, t_map map, t_move move_to){
         case MUD:
             if((move_to == U_TURN) || (move_to == T_LEFT) || (move_to == T_RIGHT)){
                 move_to = REST;
+
             }
             break;
         case ICE:
@@ -214,9 +216,11 @@ void move_in_soil(t_localisation* p_loc, t_map map, t_move move_to){
                     break;
                 case T_LEFT:
                     move_to = U_TURN;
+                    p_loc->ori = rotate(p_loc->ori, move_to);
                     break;
                 case T_RIGHT:
                     move_to=U_TURN;
+                    p_loc->ori = rotate(p_loc->ori, move_to);
                 default:
                     move_to = REST;
                     break;
@@ -233,7 +237,6 @@ void move_in_soil(t_localisation* p_loc, t_map map, t_move move_to){
             break;
     }
     if(move_to != REST){
-        p_loc->ori = rotate(p_loc->ori, move_to);
         updateLocalisation(p_loc, move_to);
     }
 
