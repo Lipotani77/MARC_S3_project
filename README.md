@@ -7,10 +7,13 @@ In 2028, a solar storm hit the MARC (Mars Rover Cartograph) rover. Its programmi
 The aim of this project is to use the tools and techniques learned during the semester to program MARC to navigate autonomously and safely return to the base station.
 
 ## Usage
-First, to ensure the expected output in the console, check your Cion configurations for the following:
+To know : 
+- We use in our code some functions that are specifically made for the windows OS that is contained in the include <windows.h> library. Hence, if you are using Linux or macOS, the program may not be working as it should.
+  
+- Too ensure the expected output in the console, check your Cion configurations for the following:
 Navigate to Run -> Edit Configurations, and activate Emulate terminal in the output console.
 
-Then, you can run the program. A menu will appear:
+Now, you can run the program. Then, a menu will appear:
 
 Start Mission: **Press 1** to begin.
 Exit: **Press 2** to quit the program.
