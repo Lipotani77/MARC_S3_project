@@ -69,10 +69,6 @@ t_localisation phase(t_localisation init_pos_marc, t_map map, int nb_cards, int 
     t_localisation new_loc_marc = loc_init(init_pos_marc.pos.x, init_pos_marc.pos.y, init_pos_marc.ori);
 
 
-    // Display of the price of the path and of the coordinates of MARC
-    printf("\nprice of the path : %d \n", simulateMarcMovements(map, &init_pos_marc, move, 3));
-    printf("coordinates : \n x: %d  y: %d  \norientation : %d", new_loc_marc.pos.x, new_loc_marc.pos.y, new_loc_marc.ori);
-
     return new_loc_marc;
 }
 
@@ -109,7 +105,7 @@ void launch_phase(t_localisation init_pos_marc, t_map map, int nb_cards, int nb_
                 init_pos_marc = phase(init_pos_marc, map, nb_cards, nb_moves, total_cost);
             }
             printf("The total cost used by Marc at the end of this phase is %d\n", *total_cost);
-
+            Sleep(5000);
         }
     }
 }
