@@ -34,11 +34,26 @@ typedef struct
  */
 t_tree create_empty_tree(t_stack *,p_node);
 
-
+/**
+ * @brief Function to display the tree
+ * @param node : the node to display
+ * @param level : the level of the node in the tree
+ * @return void
+ */
 void display_tree(t_node *node, int level);
 
+/**
+ * @brief Function to display the level of the tree
+ * @param node : the node to display
+ * @return void
+ */
 int min_path(p_node node, t_stack * path);
 
+/**
+ * @brief Function to find the node that contains the minimum cost, in order to know the best path on this level
+ * @param parent : the parent node
+ * @return the index of the node that contains the minimum cost
+ */
 int minnode(p_node parent);
 
 /**

@@ -124,6 +124,11 @@ int retrieve_cost(t_localisation localisation, t_map map);
  */
 int on_crevasse(t_map map, t_position pos);
 
+/**
+ * @brief Function to rotate the robot according to a move and its actual orientation
+ * @param ori : the actual orientation of the robot
+ * @return the new orientation of the robot
+ */
 const char* getOrientationAsString(int ori) ;
 
 

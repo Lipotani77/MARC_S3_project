@@ -78,6 +78,10 @@ void display_level(p_node);
  */
 t_stack fill_moves_node(t_stack *moves,p_node parent_node, t_map map);
 
+/**
+ * @brief Function to display the information of a node
+ * @param node
+ */
 void display_info_node(p_node node);
 
 #endif //NODE_H

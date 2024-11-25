@@ -85,6 +85,7 @@ void displayColoredMap(t_map);
 
 /**
  * @brief Display the legend for the map.
+ * @return the legend
  */
 void displayLegend();
 

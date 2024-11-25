@@ -46,12 +46,47 @@ int pop(t_stack *);
  */
 int top(t_stack);
 
+/**
+ * @brief Function to remove a value from the stack
+ * @param stack : the stack
+ * @param value : the value to remove
+ * @return none
+ */
 void removevalfromstack(t_stack *stack, int value);
+
+/**
+ * @brief Function to check if the stack is empty
+ * @param stack : the stack
+ * @return 1 if the stack is empty, 0 otherwise
+ */
 int is_stack_empty(t_stack*);
+
+/**
+ * @brief Function to copy a stack
+ * @param stack : the stack to copy
+ * @return the copy of the stack
+ */
 t_stack copy_stack(t_stack);
+
+/**
+ * @brief Function to free the stack
+ * @param stack : the stack to free
+ * @return none
+ */
 void free_stack(t_stack);
 
+/**
+ * @brief Function to remove the last element of the stack
+ * @param stack : the stack
+ * @return none
+ */
 t_stack remove_current_move_from_stack(t_stack *stack, t_move move);
+
+/**
+ * @brief Function to display the stack
+ * @param stack : the stack to display
+ * @return none
+ */
 void displayStack(t_stack);
 
 
