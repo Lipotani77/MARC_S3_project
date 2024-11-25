@@ -1,23 +1,30 @@
 #include <stdio.h>
-#include "../include/complexity.h"
-#include "../include/draw.h"
+
 #include "../include/loc.h"
 #include "../include/map.h"
 #include "../include/menu.h"
-#include "../include/moves.h"
-#include "../include/node.h"
-#include "../include/queue.h"
-#include "../include/stack.h"
-#include "../include/tree.h"
-#include "../include/marc.h"
+
 #include "../include/phase.h"
 
-//    t_localisation i_loc = loc_init(5, 5, NORTH);  // Starting position of MARC
+
 
 
 
 int main()
 {
+    printf("      _________\n");
+    printf("     /         \\\n");
+    printf("    /  [==O==]  \\\n");
+    printf("   |    MARC     |\n");
+    printf("   |   _     _   |\n");
+    printf("   |  |_|   |_|  |\n");
+    printf("   |_____________|\n");
+    printf("     /         \\\n");
+    printf("  __/___________\\\\__\n");
+    printf(" |                   |\n");
+    printf(" |   O         O     |\n");
+    printf("  \\_________________/\n");
+
     int choice;
     t_map map;
 
