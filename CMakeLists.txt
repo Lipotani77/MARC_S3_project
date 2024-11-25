@@ -26,4 +26,6 @@ add_executable(untitled1 src/main.c
         include/menu.h
         src/marc.c
         include/marc.h
+        src/phase.c
+        include/phase.h
 )

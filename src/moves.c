@@ -197,7 +197,6 @@ void move_in_soil(t_localisation* p_loc, t_map map, t_move move_to){
         return;
     }
 
-
     int loc_x, loc_y;
     t_localisation *new_loc;
     loc_x = p_loc->pos.x;
@@ -267,7 +266,4 @@ void move_in_soil(t_localisation* p_loc, t_map map, t_move move_to){
     if(move_to != REST){
         updateLocalisation(p_loc, move_to);
     }
-
-
-
 }
