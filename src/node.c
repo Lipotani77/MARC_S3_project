@@ -56,7 +56,7 @@ void add_node_same_depth(p_node parent_node, p_node son_node){
 
 //second draft
 t_stack fill_moves_node(t_stack *moves,p_node parent_node, t_map map){
-    t_stack moves_stack_copy = copy_stack(*moves); // a copy of the stack given in parameter that we will use for the transition queue
+    t_stack moves_stack_copy = copy_stack(*moves); // a copy of the stack given in parameter
 
     while(is_stack_empty(moves) != 1){ // we want to add all the moves to the parent node
         // have to create the new node we want to add

@@ -52,7 +52,7 @@ int simulateMarcMovements(t_map map, t_localisation * marc_pos, t_move moves[], 
 
     for (int i = 0; i < move_count; i++) {
         // Clear screen for the animation
-        system("cls");
+        //system("cls");
 
         displayColoredMapWithMarc(map, marc_loc->pos);
 

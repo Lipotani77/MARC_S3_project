@@ -70,7 +70,7 @@ int main()
         printf("\n");
     }
 
-    t_localisation init_pos_marc = loc_init(5, 5, NORTH); // we chose this position for MARC arbitrarily, so that it will always be valid no matter the map
+    t_localisation init_pos_marc = loc_init(2, 0, SOUTH); // we chose this position for MARC arbitrarily, so that it will always be valid no matter the map
 
     int nb_cards;
     int nb_moves;
@@ -80,6 +80,6 @@ int main()
     scanf("%d", &nb_moves);
     int* total_cost;
     *total_cost = 0;
-    launch_phase(loc_init(5, 5, NORTH), map, nb_cards, nb_moves, total_cost);
+    launch_phase(init_pos_marc, map, nb_cards, nb_moves, total_cost);
     return 0;
 }
